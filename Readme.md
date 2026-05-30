@@ -12,18 +12,18 @@ You win by understanding the dungeon.
 *(These are living documents and will change as the game evolves.)*
 
 <p align="center">
-  <a href="./-/raw/game/app/app.apk">
-    <img src="https://img.shields.io/badge/Download%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0A0A&color=37ad4c" height="130"/>
+  <a href="https://gitlab.com/Divya-Darshan/techno-dungeon/-/raw/game/app/app.apk">
+    <img src="https://img.shields.io/badge/Download%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0A0A&color=37ad4c" height="130" alt="Download APK"/>
   </a>
 </p>
 
 <table>
   <tr>
     <td>
-      <img src="./-/raw/game/img/proto.png" width="300">
+      <img src="https://gitlab.com/Divya-Darshan/techno-dungeon/-/raw/game/img/proto.png" width="300" alt="Prototype Screenshot">
     </td>
     <td>
-      <img src="./-/raw/game/img/pinkproto.png" width="300">
+      <img src="https://gitlab.com/Divya-Darshan/techno-dungeon/-/raw/game/img/pinkproto.png" width="300" alt="Pink Prototype Screenshot">
     </td>
   </tr>
 </table>
