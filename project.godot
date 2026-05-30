@@ -13,6 +13,7 @@ config_version=5
 config/name="techno-dungeon"
 run/main_scene="uid://bqb2ar0b57ycr"
 config/features=PackedStringArray("4.6", "Mobile")
+config/icon="uid://db1dolp6ha72g"
 
 [display]
 
