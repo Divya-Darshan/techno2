@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://d23sifhx2snxe"]
+
+[ext_resource type="Texture2D" uid="uid://dkk3d3jm0jnjy" path="res://asset/sprtes/huggy/huggy - Copy.png" id="1_clihk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r0sxg"]
+height = 2.8116455
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpt1a"]
+atlas = ExtResource("1_clihk")
+region = Rect2(0, 0, 345, 750)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k34s7"]
+atlas = ExtResource("1_clihk")
+region = Rect2(345, 0, 345, 750)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b72ti"]
+atlas = ExtResource("1_clihk")
+region = Rect2(690, 0, 345, 750)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al2cy"]
+atlas = ExtResource("1_clihk")
+region = Rect2(1035, 0, 345, 750)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlqlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpt1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k34s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b72ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al2cy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="huggy" type="CharacterBody3D" unique_id=1573923652]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=459314567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6653478, 0)
+shape = SubResource("CapsuleShape3D_r0sxg")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1019247882]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.5883825, 0)
+billboard = 2
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.3
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mlqlw")
+autoplay = "default"
+frame_progress = 0.80759776
