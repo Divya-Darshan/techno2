@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b1rg40o8cvpu0"]
+
+[ext_resource type="PackedScene" uid="uid://c3lf1cpnwin0e" path="res://asset/sprtes/404/405.blend" id="1_fu5v1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fu5v1"]
+transparency = 2
+alpha_scissor_threshold = 0.022
+alpha_antialiasing_mode = 0
+blend_mode = 2
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_i7pap"]
+material = SubResource("StandardMaterial3D_fu5v1")
+
+[node name="405" unique_id=1366251172 instance=ExtResource("1_fu5v1")]
+
+[node name="Label" type="Label3D" parent="." index="2" unique_id=349855425]
+transform = Transform3D(0.63106203, 0, 0, 0, 0.63106203, 0, 0, 0, 0.63106203, 0.0051050186, 1.8298488, -0.01468122)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+outline_modulate = Color(1, 1, 1, 1)
+text = "Yo, I am Gab"
+outline_size = 0
+autowrap_mode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Label" index="0" unique_id=322154591]
+transform = Transform3D(1.0151137, 0, 0, 0, 0.24788241, 0, 0, 0, 0.24788241, 0, 0, -0.022031102)
+mesh = SubResource("QuadMesh_i7pap")
