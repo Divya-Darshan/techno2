@@ -284,7 +284,6 @@ shape = SubResource("CapsuleShape3D_1bvp3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032784939, 2.3348255, -1.692601)
 pixel_size = 0.05
 billboard = 2
-shaded = true
 alpha_cut = 1
 alpha_scissor_threshold = 0.3
 texture_filter = 2
@@ -292,4 +291,5 @@ sprite_frames = SubResource("SpriteFrames_2ieo8")
 autoplay = "default"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=699698483]
-transform = Transform3D(1, 0, 0, 0, 0.9940867, 0.10858928, 0, -0.10858928, 0.9940867, -0.0042230785, 2.6952229, 1.0739899)
+transform = Transform3D(1, 0, 0, 0, 0.9940867, 0.10858928, 0, -0.10858928, 0.9940867, -0.0042230785, 2.5980854, 1.3904705)
+fov = 56.7
