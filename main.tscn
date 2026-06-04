@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqb2ar0b57ycr"]
 
 [ext_resource type="PackedScene" uid="uid://bqyj4duv3rrlm" path="res://player/player.tscn" id="1_w48qg"]
-[ext_resource type="MeshLibrary" uid="uid://drfsdgprntijr" path="res://asset/tiles/tileset.tres" id="3_h2yge"]
+[ext_resource type="MeshLibrary" uid="uid://drfsdgprntijr" path="res://asset/tiles/tileset.tres" id="2_getpj"]
 [ext_resource type="PackedScene" uid="uid://dgn2qpu5rnsje" path="res://asset/sprtes/duck/duck.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cl13hj3dxu3d1" path="res://asset/sprtes/eris/eris.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c41c8q5a5ljmv" path="res://asset/sprtes/kit/kit.tscn" id="6_7mycd"]
@@ -18,8 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://by5jfi0g22vx2" path="res://asset/sprtes/eagle/eagle.tscn" id="18_074og"]
 [ext_resource type="PackedScene" uid="uid://bqtd3545b4vyh" path="res://asset/sprtes/sunflower/sunflower.tscn" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://ha5w5x7nqe3b" path="res://player/controls.tscn" id="20_82xsv"]
+[ext_resource type="PackedScene" uid="uid://c0b7a285wao1w" path="res://asset/sprtes/setsuna/setsuna.tscn" id="21_d13ii"]
 [ext_resource type="PackedScene" uid="uid://d23sifhx2snxe" path="res://asset/sprtes/huggy/huggy.tscn" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://b1rg40o8cvpu0" path="res://asset/sprtes/404/404.tscn" id="21_ryguw"]
+[ext_resource type="PackedScene" uid="uid://djs3sim0pej3v" path="res://asset/sprtes/under/sans_night/sans_night.tscn" id="22_ryguw"]
+[ext_resource type="PackedScene" uid="uid://sw6g13ufg73y" path="res://asset/sprtes/under/sans/sans.tscn" id="23_d13ii"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -56,7 +59,7 @@ transform = Transform3D(-0.6432421, 0, 0.76566285, 0, 1, 0, -0.76566285, 0, -0.6
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1558898279]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-mesh_library = ExtResource("3_h2yge")
+mesh_library = ExtResource("2_getpj")
 cell_size = Vector3(1, 1, 1)
 cell_center_y = false
 data = {
@@ -116,3 +119,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054380298, -38.366085)
 
 [node name="406" parent="." unique_id=1366251172 instance=ExtResource("21_ryguw")]
 transform = Transform3D(1.7350023, 0, 0, 0, 1.7350023, 0, 0, 0, 1.7350023, -16.105825, 0, -30.55867)
+
+[node name="setsuna" parent="." unique_id=1597125169 instance=ExtResource("21_d13ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.905349, 0, -38.58709)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=67296378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6883144, 0.26068234)
+light_energy = 1.634
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 2.743
+light_specular = 16.0
+
+[node name="sans_night" parent="." unique_id=1046559142 instance=ExtResource("22_ryguw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.875273, 0, -39.29665)
+
+[node name="sans" parent="." unique_id=1534452225 instance=ExtResource("23_d13ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2568984, 0, -39.031452)

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://djs3sim0pej3v"]
+
+[ext_resource type="Texture2D" uid="uid://jycncisa3k6y" path="res://asset/sprtes/under/sans_night/s..png" id="1_450k4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r0sxg"]
+height = 2.8116455
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrfj4"]
+atlas = ExtResource("1_450k4")
+region = Rect2(0, 0, 308, 456)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svea1"]
+atlas = ExtResource("1_450k4")
+region = Rect2(308, 0, 308, 456)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl8we"]
+atlas = ExtResource("1_450k4")
+region = Rect2(616, 0, 308, 456)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqm7b"]
+atlas = ExtResource("1_450k4")
+region = Rect2(924, 0, 308, 456)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wimw0"]
+atlas = ExtResource("1_450k4")
+region = Rect2(1232, 0, 308, 456)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo0ht"]
+atlas = ExtResource("1_450k4")
+region = Rect2(1540, 0, 308, 456)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlqlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrfj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svea1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl8we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqm7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wimw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo0ht")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="sans_night" type="CharacterBody3D" unique_id=1573923652]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=459314567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4033442, 0)
+shape = SubResource("CapsuleShape3D_r0sxg")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1019247882]
+transform = Transform3D(0.33692795, 7.644668e-05, 0, -7.644668e-05, 0.33692795, 0, 0, 0, 0.33692792, -0.19703579, 1.5235527, 0)
+pixel_size = 0.02
+billboard = 2
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.3
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mlqlw")
+autoplay = "default"
+frame_progress = 0.7818919
