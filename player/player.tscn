@@ -284,6 +284,7 @@ shape = SubResource("CapsuleShape3D_1bvp3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032784939, 2.3348255, -1.692601)
 pixel_size = 0.05
 billboard = 2
+shaded = true
 alpha_cut = 1
 alpha_scissor_threshold = 0.3
 texture_filter = 2

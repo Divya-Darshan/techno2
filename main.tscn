@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b1rg40o8cvpu0" path="res://asset/sprtes/404/404.tscn" id="21_ryguw"]
 [ext_resource type="PackedScene" uid="uid://djs3sim0pej3v" path="res://asset/sprtes/under/sans_night/sans_night.tscn" id="22_ryguw"]
 [ext_resource type="PackedScene" uid="uid://sw6g13ufg73y" path="res://asset/sprtes/under/sans/sans.tscn" id="23_d13ii"]
+[ext_resource type="PackedScene" uid="uid://mpbixevdr5p0" path="res://venti/venti.tscn" id="24_1u8w0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,6 +42,19 @@ glow_hdr_threshold = 1.31
 volumetric_fog_density = 0.4175
 adjustment_enabled = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_1u8w0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fu5v1"]
+transparency = 2
+alpha_scissor_threshold = 0.022
+alpha_antialiasing_mode = 0
+blend_mode = 2
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_1u8w0"]
+material = SubResource("StandardMaterial3D_fu5v1")
+
 [node name="Main" type="Node3D" unique_id=1497525646]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1294403263]
@@ -55,7 +69,7 @@ shadow_transmittance_bias = -1.145
 shadow_blur = 1.059
 
 [node name="player" parent="." unique_id=1918745686 instance=ExtResource("1_w48qg")]
-transform = Transform3D(-0.6432421, 0, 0.76566285, 0, 1, 0, -0.76566285, 0, -0.6432421, 3.6593747, -0.5536058, -39.664284)
+transform = Transform3D(-0.6432421, 0, 0.76566285, 0, 1, 0, -0.76566285, 0, -0.6432421, -23.100002, -0.5536058, -470.41147)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1558898279]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -112,7 +126,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0954843, 2.5528038, -30.79
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1485522, 0, -38.30153)
 
 [node name="controls" parent="." unique_id=2064526786 instance=ExtResource("20_82xsv")]
-visible = false
 
 [node name="huggy" parent="." unique_id=1113290737 instance=ExtResource("21_getpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054380298, -38.366085)
@@ -135,3 +148,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.875273, 0, -39.29665)
 
 [node name="sans" parent="." unique_id=1534452225 instance=ExtResource("23_d13ii")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2568984, 0, -39.031452)
+
+[node name="venti" parent="." unique_id=1145343693 instance=ExtResource("24_1u8w0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.111277, 0.101965904, -38.972183)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1324715882]
+transform = Transform3D(0.69773334, 0, 0, 0, 0.69773334, 0, 0, 0, 0.69773334, -18.541605, 0.7922332, -480.69415)
+mesh = SubResource("BoxMesh_1u8w0")
+
+[node name="Label" type="Label3D" parent="MeshInstance3D" unique_id=797953595]
+transform = Transform3D(1.683426, 0, 0, 0, 1.683426, 0, 0, 0, 1.683426, 0.005104065, 1.0375183, -0.014709473)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+outline_modulate = Color(1, 1, 1, 1)
+text = "Baby"
+outline_size = 0
+autowrap_mode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/Label" unique_id=1657746979]
+transform = Transform3D(1.0151137, 0, 0, 0, 0.24788241, 0, 0, 0, 0.24788241, 0, 0, -0.022031102)
+mesh = SubResource("QuadMesh_1u8w0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=348320387]
+transform = Transform3D(1.0629991, 0, 0, 0, 1.0629991, 0, 0, 0, 1.0629991, -16.921299, 0.7922332, -480.69415)
+mesh = SubResource("BoxMesh_1u8w0")
+
+[node name="Label" type="Label3D" parent="MeshInstance3D2" unique_id=1965926988]
+transform = Transform3D(1.683426, 0, 0, 0, 1.683426, 0, 0, 0, 1.683426, 0.005104065, 1.0375183, -0.014709473)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+outline_modulate = Color(1, 1, 1, 1)
+text = "Mother
+"
+outline_size = 0
+autowrap_mode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D2/Label" unique_id=681402978]
+transform = Transform3D(1.0151137, 0, 0, 0, 0.24788241, 0, 0, 0, 0.24788241, 0, 0, -0.022031102)
+mesh = SubResource("QuadMesh_1u8w0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=496615439]
+transform = Transform3D(1.2313164, 0, 0, 0, 1.2313164, 0, 0, 0, 1.2313164, -19.922237, 0.98364127, -480.69415)
+mesh = SubResource("BoxMesh_1u8w0")
+
+[node name="Label" type="Label3D" parent="MeshInstance3D3" unique_id=2033486153]
+transform = Transform3D(1.683426, 0, 0, 0, 1.683426, 0, 0, 0, 1.683426, 0.005104065, 1.0375183, -0.014709473)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+outline_modulate = Color(1, 1, 1, 1)
+text = "Father"
+outline_size = 0
+autowrap_mode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D3/Label" unique_id=602875152]
+transform = Transform3D(1.0151137, 0, 0, 0, 0.24788241, 0, 0, 0, 0.24788241, 0, 0, -0.022031102)
+mesh = SubResource("QuadMesh_1u8w0")
