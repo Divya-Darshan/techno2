@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bk4rike7uiwm3"]
+
+[ext_resource type="Texture2D" uid="uid://d0g2gqbclvido" path="res://asset/sprtes/duck/DUCK.jpg" id="1_c71pt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r0sxg"]
+height = 2.8116455
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_617ox"]
+atlas = ExtResource("1_c71pt")
+region = Rect2(0, 0, 389, 359)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlqlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_617ox")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="duckpro" type="CharacterBody3D" unique_id=1573923652]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=459314567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6653478, 0)
+shape = SubResource("CapsuleShape3D_r0sxg")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1019247882]
+transform = Transform3D(0.78461653, 0, 0, 0, 0.78461653, 0, 0, 0, 0.78461653, 0, 1.4800615, 0)
+billboard = 2
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.3
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mlqlw")
+autoplay = "default"
+frame_progress = 0.71289855
