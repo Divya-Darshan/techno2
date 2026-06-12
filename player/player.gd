@@ -40,6 +40,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -66,6 +67,22 @@ func _physics_process(delta: float) -> void:
 
 	# apply bobbing ON TOP of original position
 	camera.transform.origin = camera_base_pos + bob_offset
+	
+	# sprite animation
+	if input_dir.length() > 0:
+		if sprite_3d.animation != "walk":
+			sprite_3d.play("walk")
+	else:
+		if sprite_3d.animation != "idle":
+			sprite_3d.play("idle")
+
+	# flip sprite left/right
+	if input_dir.x < 0:
+		sprite_3d.flip_h = false
+	elif input_dir.x > 0:
+		sprite_3d.flip_h = true
+		
+	update_sprite(input_dir)
 
 	move_and_slide()
 
@@ -75,3 +92,14 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func update_sprite(input_dir: Vector2):
+	if input_dir.length() > 0:
+		sprite_3d.play("walk")
+	else:
+		sprite_3d.play("idle")
+
+	if input_dir.x < 0:
+		sprite_3d.flip_h = false
+	elif input_dir.x > 0:
+		sprite_3d.flip_h = true
