@@ -14,7 +14,7 @@ var camera_base_pos: Vector3
 @onready var Head: Node3D = $"."
 @onready var camera: Camera3D = $Camera3D
 @onready var sprite_3d: AnimatedSprite3D = $Sprite3D
-
+@onready var controls: Node2D = $"../controls"
 func player():
 	pass
 
@@ -103,3 +103,9 @@ func update_sprite(input_dir: Vector2):
 		sprite_3d.flip_h = false
 	elif input_dir.x > 0:
 		sprite_3d.flip_h = true
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	$"../controls/cube".visible = !$"../controls/cube".visible
+	
+	

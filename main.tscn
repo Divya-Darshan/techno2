@@ -55,6 +55,8 @@ billboard_keep_scale = true
 [sub_resource type="QuadMesh" id="QuadMesh_1u8w0"]
 material = SubResource("StandardMaterial3D_fu5v1")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_1u8w0"]
+
 [node name="Main" type="Node3D" unique_id=1497525646]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1294403263]
@@ -69,7 +71,7 @@ shadow_transmittance_bias = -1.145
 shadow_blur = 1.059
 
 [node name="player" parent="." unique_id=1918745686 instance=ExtResource("1_w48qg")]
-transform = Transform3D(-0.6432421, 0, 0.76566285, 0, 1, 0, -0.76566285, 0, -0.6432421, 1.9508343, -0.5536058, -38.303192)
+transform = Transform3D(-0.6432421, 0, 0.76566285, 0, 1, 0, -0.76566285, 0, -0.6432421, -26.401077, -0.5536058, -479.64896)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1558898279]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -167,6 +169,12 @@ autowrap_mode = 2
 transform = Transform3D(1.0151137, 0, 0, 0, 0.24788241, 0, 0, 0, 0.24788241, 0, 0, -0.022031102)
 mesh = SubResource("QuadMesh_1u8w0")
 
+[node name="Area3D" type="Area3D" parent="MeshInstance3D" unique_id=560985121]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D" unique_id=338785262]
+transform = Transform3D(9.55, 0, 0, 0, 9.55, 0, 0, 0, 9.55, 0, 0, 0)
+shape = SubResource("SphereShape3D_1u8w0")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=348320387]
 transform = Transform3D(1.0629991, 0, 0, 0, 1.0629991, 0, 0, 0, 1.0629991, -16.921299, 0.7922332, -480.69415)
 mesh = SubResource("BoxMesh_1u8w0")
@@ -206,3 +214,5 @@ mesh = SubResource("QuadMesh_1u8w0")
 
 [node name="duckpro" parent="." unique_id=1514754009 instance=ExtResource("24_1u8w0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.381798, 0, -38.99708)
+
+[connection signal="body_entered" from="MeshInstance3D/Area3D" to="player" method="_on_area_3d_body_entered"]

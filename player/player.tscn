@@ -258,6 +258,8 @@ animations = [{
 "speed": 23.0
 }]
 
+[sub_resource type="BoxMesh" id="BoxMesh_g1dw6"]
+
 [node name="player" type="CharacterBody3D" unique_id=1918745686]
 script = ExtResource("1_rkbax")
 
@@ -281,3 +283,8 @@ frame_progress = 0.44503248
 [node name="Camera3D" type="Camera3D" parent="." unique_id=699698483]
 transform = Transform3D(1, 0, 0, 0, 0.9940867, 0.10858928, 0, -0.10858928, 0.9940867, -0.0042230785, 2.6917279, 2.7190745)
 fov = 56.7
+
+[node name="cube" type="MeshInstance3D" parent="." unique_id=419217740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0234616, -1.6939638)
+visible = false
+mesh = SubResource("BoxMesh_g1dw6")

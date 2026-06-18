@@ -3,11 +3,32 @@
 [ext_resource type="Texture2D" uid="uid://m06pj5v46ld2" path="res://img/proto.png" id="1_ov3qh"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_hpadi"]
 
-[node name="Node2D" type="Node2D" unique_id=2064526786]
+[sub_resource type="GDScript" id="GDScript_hpadi"]
+script/source = "extends Node2D
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1096944501]
-visible = false
-position = Vector2(157, 421)
+@onready var player: CharacterBody3D = $player
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_cube_pressed() -> void:
+	$\"../player/cube\".visible = !$\"../player/cube\".visible
+	$\"../player/Sprite3D\".visible = !$\"../player/Sprite3D\".visible
+	
+"
+
+[node name="Node2D" type="Node2D" unique_id=2064526786]
+script = SubResource("GDScript_hpadi")
+
+[node name="cube" type="TouchScreenButton" parent="." unique_id=1096944501]
+position = Vector2(264, 326)
 scale = Vector2(0.16180374, 0.12325581)
 texture_normal = ExtResource("1_ov3qh")
 passby_press = true
@@ -42,3 +63,5 @@ offset_left = 3.0
 offset_top = 343.0
 offset_right = 303.0
 offset_bottom = 643.0
+
+[connection signal="pressed" from="cube" to="." method="_on_cube_pressed"]
