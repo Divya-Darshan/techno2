@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://d7e7sh82fmtr" path="res://asset/sprtes/cuphead/cuphead_intro_a_0022.png" id="27_ydb3t"]
 [ext_resource type="PackedScene" uid="uid://bivwuqoa68ehc" path="res://asset/sprtes/cuphead/gun.blend" id="28_30w6e"]
 [ext_resource type="Script" uid="uid://8cbfwph0xpm6" path="res://asset/sprtes/cuphead/gun.gd" id="29_s4blc"]
-[ext_resource type="Texture2D" uid="uid://dyiav1u3heojv" path="res://asset/sprtes/cuphead/blue_cheese_64x64.png" id="30_5wmkw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r0sxg"]
 radius = 0.6166992
@@ -189,7 +188,6 @@ frame_progress = 0.6611619
 [node name="gun" parent="AnimatedSprite3D" unique_id=1120060768 instance=ExtResource("28_30w6e")]
 transform = Transform3D(-1.478123, 0, -0.08561616, 0, 1.4806001, 0, 0.08561616, 0, -1.478123, 0.49481654, -0.057014287, -0.06772073)
 script = ExtResource("29_s4blc")
-bullet_texture = ExtResource("30_5wmkw")
 
 [node name="Marker3D" type="Marker3D" parent="AnimatedSprite3D/gun" unique_id=1206910113]
 transform = Transform3D(1, 0, -7.450581e-09, 0, 1, 0, 7.450581e-09, 0, 1, -0.3108649, 0.16447788, 0.024741258)
