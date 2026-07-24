@@ -83,7 +83,7 @@ func choose_new_state():
 			current_state = QUACK
 			state_timer = randf_range(1.0, 2.0)
 
-			animated_sprite_3d.play(\"QUCK\")
+			animated_sprite_3d.play(\"quck\")
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5dc06"]
