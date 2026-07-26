@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqb2ar0b57ycr"]
 
 [ext_resource type="PackedScene" uid="uid://bqyj4duv3rrlm" path="res://player/player.tscn" id="1_w48qg"]
+[ext_resource type="PackedScene" uid="uid://dnw6sej8l37hw" path="res://player/control.tscn" id="2_1u8w0"]
 [ext_resource type="MeshLibrary" uid="uid://drfsdgprntijr" path="res://asset/tiles/tileset.tres" id="2_getpj"]
 [ext_resource type="PackedScene" uid="uid://dgn2qpu5rnsje" path="res://asset/sprtes/duck/duck.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cl13hj3dxu3d1" path="res://asset/sprtes/eris/eris.tscn" id="5_lquwl"]
@@ -68,7 +69,9 @@ shadow_transmittance_bias = -1.145
 shadow_blur = 1.059
 
 [node name="player" parent="." unique_id=1918745686 instance=ExtResource("1_w48qg")]
-transform = Transform3D(-0.6432421, 0, 0.76566285, 0, 1, 0, -0.76566285, 0, -0.6432421, -19.638006, -0.5536058, -480.2828)
+transform = Transform3D(-0.9079357, 0, -0.41910955, 0, 1, 0, 0.41910955, 0, -0.9079357, -26.162891, -0.5536058, -481.99805)
+
+[node name="control" parent="player" unique_id=346887666 instance=ExtResource("2_1u8w0")]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1558898279]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
