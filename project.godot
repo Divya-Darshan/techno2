@@ -24,7 +24,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SpriteStack2D/plugin.cfg", "res://addons/godot_xterm/plugin.cfg")
+enabled=PackedStringArray("res://addons/SpriteStack2D/plugin.cfg", "res://addons/godot_xterm/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
 
 [input]
 
