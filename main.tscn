@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bqb2ar0b57ycr"]
 
 [ext_resource type="PackedScene" uid="uid://bqyj4duv3rrlm" path="res://player/player.tscn" id="1_w48qg"]
-[ext_resource type="PackedScene" uid="uid://dnw6sej8l37hw" path="res://player/control.tscn" id="2_1u8w0"]
 [ext_resource type="MeshLibrary" uid="uid://drfsdgprntijr" path="res://asset/tiles/tileset.tres" id="2_getpj"]
 [ext_resource type="PackedScene" uid="uid://dgn2qpu5rnsje" path="res://asset/sprtes/duck/duck.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cl13hj3dxu3d1" path="res://asset/sprtes/eris/eris.tscn" id="5_lquwl"]
@@ -24,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://djs3sim0pej3v" path="res://asset/sprtes/under/sans_night/sans_night.tscn" id="22_ryguw"]
 [ext_resource type="PackedScene" uid="uid://sw6g13ufg73y" path="res://asset/sprtes/under/sans/sans.tscn" id="23_d13ii"]
 [ext_resource type="PackedScene" uid="uid://bk4rike7uiwm3" path="res://asset/sprtes/duck/DUCKPRO.tscn" id="24_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://cq71lp3gryadv" path="res://asset/sprtes/nopoopjuly/nopoop.tscn" id="25_0odxb"]
+[ext_resource type="PackedScene" uid="uid://dnw6sej8l37hw" path="res://player/control.tscn" id="25_lswn8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -68,11 +69,6 @@ shadow_normal_bias = 7.059
 shadow_transmittance_bias = -1.145
 shadow_blur = 1.059
 
-[node name="player" parent="." unique_id=1918745686 instance=ExtResource("1_w48qg")]
-transform = Transform3D(-0.9079357, 0, -0.41910955, 0, 1, 0, 0.41910955, 0, -0.9079357, -26.162891, -0.5536058, -481.99805)
-
-[node name="control" parent="player" unique_id=346887666 instance=ExtResource("2_1u8w0")]
-
 [node name="GridMap" type="GridMap" parent="." unique_id=1558898279]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh_library = ExtResource("2_getpj")
@@ -86,7 +82,7 @@ data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3499136, 0.055313826, -38.780487)
 
 [node name="duck" parent="." unique_id=1842219288 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34867132, 0.01428777, -29.988962)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.716518, 0.01428777, -47.40493)
 
 [node name="gitlfriend" parent="." unique_id=1628198291 instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7983456, 0.0614509, -30.659245)
@@ -98,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3756764, 0, -30.470854)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5072856, 0, -29.991215)
 
 [node name="md" parent="." unique_id=1140903339 instance=ExtResource("9_kek77")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.147047, 0, -30.416323)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.147047, 0, -48.507965)
 
 [node name="air" parent="." unique_id=427940455 instance=ExtResource("10_4c57u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.409775, -12.362311, -47.4109)
@@ -113,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.794431, 0, -30.608803)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.111973, 0, -30.674187)
 
 [node name="cuphead" parent="." unique_id=620771237 instance=ExtResource("14_w48qg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.367546, 0, -30.580025)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.36432, 0.028802872, -30.582582)
 
 [node name="sonicexe" parent="." unique_id=33620806 instance=ExtResource("15_vivmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.57538, 0, -30.525005)
@@ -206,3 +202,11 @@ mesh = SubResource("QuadMesh_1u8w0")
 
 [node name="duckpro" parent="." unique_id=1514754009 instance=ExtResource("24_1u8w0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.381798, 0, -38.99708)
+
+[node name="nopoop" parent="." unique_id=810542413 instance=ExtResource("25_0odxb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.196497, 4.9743996, -49.330704)
+
+[node name="player" parent="." unique_id=1918745686 instance=ExtResource("1_w48qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.060719, 0, -48.177155)
+
+[node name="control" parent="player" unique_id=346887666 instance=ExtResource("25_lswn8")]
