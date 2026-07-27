@@ -1,27 +1,31 @@
 extends CharacterBody3D
 
 const SPEED = 10.0
-const JUMP_VELOCITY = 10.0
+const JUMP_VELOCITY = 4.5
 const CAMERA_SENSE = 0.001
 
-# camera shake
+# Camera shake
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.07
-var t_bob = 0.0 
+var t_bob = 0.0
 var camera_base_pos: Vector3
 
-# player's sub nodes
+# Player nodes
+@onready var idle: AnimatedSprite3D = $Sprite/idle
+@onready var walk: AnimatedSprite3D = $Sprite/walk
 @onready var Head: Node3D = $"."
 @onready var camera: Camera3D = $Camera3D
-@onready var sprite_3d: AnimatedSprite3D = $Sprite3D
 
-func player():
-	pass
-
+# Last direction
+var last_direction := "front"
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	camera_base_pos = camera.transform.origin  # store original position
+	camera_base_pos = camera.transform.origin
+
+	idle.visible = true
+	walk.visible = false
+	idle.play("front")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -40,15 +44,19 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
+
+	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	# Jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+	# Movement
 	var input_dir := Input.get_vector("a", "d", "w", "s")
 	var direction := (Head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
 	if is_on_floor():
 		if direction != Vector3.ZERO:
 			velocity.x = direction.x * SPEED
@@ -57,49 +65,62 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0.0
 			velocity.z = 0.0
 	else:
-		velocity.x = lerp(velocity.x,direction.x * SPEED, delta * 2.0 )
-		velocity.z = lerp(velocity.z,direction.z * SPEED, delta * 2.0 )
-		
+		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
+		velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 2.0)
 
-	# headbob
+	# Headbob
 	t_bob += delta * velocity.length() * float(is_on_floor())
-	var bob_offset = _headbob(t_bob)
+	camera.transform.origin = camera_base_pos + _headbob(t_bob)
 
-	# apply bobbing ON TOP of original position
-	camera.transform.origin = camera_base_pos + bob_offset
-	
-	# sprite animation
-	if input_dir.length() > 0:
-		if sprite_3d.animation != "walk":
-			sprite_3d.play("walk")
-	else:
-		if sprite_3d.animation != "idle":
-			sprite_3d.play("idle")
-
-	# flip sprite left/right
-	if input_dir.x < 0:
-		sprite_3d.flip_h = false
-	elif input_dir.x > 0:
-		sprite_3d.flip_h = true
-		
+	# Update animation
 	update_sprite(input_dir)
 
 	move_and_slide()
 
 
-func _headbob(time) -> Vector3:
+func _headbob(time: float) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	pos.x = cos(time * BOB_FREQ / 2.0) * BOB_AMP
 	return pos
 
-func update_sprite(input_dir: Vector2):
-	if input_dir.length() > 0:
-		sprite_3d.play("walk")
-	else:
-		sprite_3d.play("idle")
 
-	if input_dir.x < 0:
-		sprite_3d.flip_h = false
-	elif input_dir.x > 0:
-		sprite_3d.flip_h = true
+func show_sprite(sprite: AnimatedSprite3D):
+	idle.visible = false
+	walk.visible = false
+	sprite.visible = true
+
+
+func update_sprite(input_dir: Vector2):
+
+	# Remember last direction
+	if input_dir.length() > 0:
+
+		if input_dir.y > 0:
+			if input_dir.x < 0:
+				last_direction = "back_left"
+			elif input_dir.x > 0:
+				last_direction = "back_right"
+			else:
+				last_direction = "back"
+
+		elif input_dir.y < 0:
+			if input_dir.x < 0:
+				last_direction = "front_left"
+			elif input_dir.x > 0:
+				last_direction = "front_right"
+			else:
+				last_direction = "front"
+
+		elif input_dir.x < 0:
+			last_direction = "front_left"
+
+		elif input_dir.x > 0:
+			last_direction = "front_right"
+
+		show_sprite(walk)
+		walk.play(last_direction)
+
+	else:
+		show_sprite(idle)
+		idle.play(last_direction)
