@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cq71lp3gryadv"]
+
+[ext_resource type="Texture2D" uid="uid://caxv73q14j55u" path="res://asset/sprtes/nopoopjuly/nopoop.png" id="1_fwnkw"]
+
+[sub_resource type="GDScript" id="GDScript_fwnkw"]
+script/source = "extends Area3D
+
+var swing := 0.0
+var velocity := 0.0
+
+func _process(delta: float) -> void:
+	# Spring physics
+	velocity += -swing * 15.0 * delta
+	velocity *= 0.96
+
+	swing += velocity
+
+	# Rotate around Z (change to X if your sign hangs differently)
+	rotation.x = deg_to_rad(swing)
+
+
+
+
+func _on_body_entered(body: Node3D) -> void:
+	# Give it a random push
+	velocity += randf_range(-10.0, 1.0)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5dc06"]
+size = Vector3(2.2043037, 1.505394, 0.32390785)
+
+[node name="nopoop" type="Area3D" unique_id=810542413]
+script = SubResource("GDScript_fwnkw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=464225578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10525665, -1.3651154, -0.45581195)
+shape = SubResource("BoxShape3D_5dc06")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1118137374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016795307, -1.0224365, -0.45155764)
+pixel_size = 0.05
+shaded = true
+alpha_scissor_threshold = 0.3
+texture_filter = 0
+texture = ExtResource("1_fwnkw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
