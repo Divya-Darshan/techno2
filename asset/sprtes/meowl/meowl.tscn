@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cva6xfrdir0pt"]
+
+[ext_resource type="Texture2D" uid="uid://j6j725s3q7su" path="res://asset/sprtes/meowl/meowl.png" id="1_htv63"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r0sxg"]
+radius = 0.27454376
+height = 0.5490875
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlqlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htv63")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="meowl" type="CharacterBody3D" unique_id=1573923652]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=459314567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44326943, 0.0083550215)
+shape = SubResource("CapsuleShape3D_r0sxg")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1019247882]
+transform = Transform3D(0.23620231, 5.3592714e-05, 0, -5.3592714e-05, 0.23620231, 0, 0, 0, 0.23620228, -0.05705285, 0.42176056, 0.023927212)
+billboard = 2
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.26
+sprite_frames = SubResource("SpriteFrames_mlqlw")
+autoplay = "default"
+frame_progress = 0.36981946

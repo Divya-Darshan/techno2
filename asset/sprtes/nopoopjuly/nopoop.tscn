@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cq71lp3gryadv"]
 
 [ext_resource type="Texture2D" uid="uid://caxv73q14j55u" path="res://asset/sprtes/nopoopjuly/nopoop.png" id="1_fwnkw"]
+[ext_resource type="PackedScene" uid="uid://cva6xfrdir0pt" path="res://asset/sprtes/meowl/meowl.tscn" id="2_8cf00"]
 
 [sub_resource type="GDScript" id="GDScript_fwnkw"]
 script/source = "extends Area3D
@@ -43,5 +44,8 @@ shaded = true
 alpha_scissor_threshold = 0.3
 texture_filter = 0
 texture = ExtResource("1_fwnkw")
+
+[node name="meowl" parent="." unique_id=1573923652 instance=ExtResource("2_8cf00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7166139, -0.94919103, -0.45610893)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
