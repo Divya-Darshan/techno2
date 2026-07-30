@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bw4bmouw75k1s" path="res://asset/sprtes/glato/glato.png" id="4_dqyho"]
 [ext_resource type="Texture2D" uid="uid://v8kilntr0fq1" path="res://asset/sprtes/glato/neesi.png" id="5_34xxm"]
 [ext_resource type="Texture2D" uid="uid://p45or0ny4j5l" path="res://asset/sprtes/glato/smok'.png" id="6_kerka"]
+[ext_resource type="Texture2D" uid="uid://cx41b0xd6ybsq" path="res://asset/sprtes/glato/monkey.png" id="7_st1ir"]
 [ext_resource type="PackedScene" uid="uid://bahxvrwsqx1e4" path="res://asset/sprtes/glato/verity.blend" id="7_vg8r2"]
+[ext_resource type="Texture2D" uid="uid://huqvv0ls7bhl" path="res://asset/sprtes/glato/jinhsi.png" id="8_gn28s"]
+[ext_resource type="Texture2D" uid="uid://bwrxv8fwankad" path="res://asset/sprtes/glato/Crimson.png" id="9_gn28s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r0sxg"]
 height = 2.8116455
@@ -71,6 +74,39 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_kerka")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7dipu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_st1ir")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4la1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gn28s")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37tmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gn28s")
 }],
 "loop": 1,
 "name": &"default",
@@ -146,6 +182,38 @@ alpha_cut = 1
 alpha_scissor_threshold = 0.3
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_vg8r2")
+autoplay = "default"
+
+[node name="monk" type="AnimatedSprite3D" parent="." unique_id=1924215063]
+transform = Transform3D(0.2849325, 6.464927e-05, 0, -6.464927e-05, 0.2849325, 0, 0, 0, 0.28493243, 15.088503, 1.8116229, 10.012918)
+pixel_size = 0.04
+billboard = 2
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.3
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7dipu")
+autoplay = "default"
+frame_progress = 0.4476024
+
+[node name="jul" type="AnimatedSprite3D" parent="." unique_id=841182769]
+transform = Transform3D(0.07236902, 1.6420045e-05, 0, -1.6420045e-05, 0.07236902, 0, 0, 0, 0.07236901, 16.345102, 2.833458, 13.873782)
+pixel_size = 0.04
+billboard = 2
+alpha_cut = 1
+alpha_scissor_threshold = 0.3
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_4la1u")
+autoplay = "default"
+
+[node name="crunson" type="AnimatedSprite3D" parent="." unique_id=342678454]
+transform = Transform3D(0.23122104, 5.2462503e-05, 0, -5.2462503e-05, 0.23122104, 0, 0, 0, 0.231221, 16.345102, 2.0004206, 18.297523)
+pixel_size = 0.04
+billboard = 2
+alpha_cut = 1
+alpha_scissor_threshold = 0.3
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_37tmg")
 autoplay = "default"
 
 [node name="verity" parent="." unique_id=1707090923 instance=ExtResource("7_vg8r2")]
