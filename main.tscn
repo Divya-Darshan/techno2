@@ -210,7 +210,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.381798, 0, -38.99708)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.196497, 4.9743996, -49.330704)
 
 [node name="player" parent="." unique_id=1918745686 instance=ExtResource("1_w48qg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.060719, 0, -48.177155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1018515, 0, -54.577217)
 
 [node name="control" parent="player" unique_id=346887666 instance=ExtResource("25_lswn8")]
 visible = false
