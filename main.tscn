@@ -213,7 +213,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.196497, 4.9743996, -49.330
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1018515, 0, -54.577217)
 
 [node name="control" parent="player" unique_id=346887666 instance=ExtResource("25_lswn8")]
-visible = false
 
 [node name="flagrent" parent="." unique_id=1693939584 instance=ExtResource("26_lswn8")]
 transform = Transform3D(0.1773846, 0, 0.1394603, 0, 0.22564235, 0, -0.1394603, 0, 0.1773846, 5.842435, 1.5087495, -57.828587)

@@ -11,21 +11,18 @@ var t_bob = 0.0
 var camera_base_pos: Vector3
 
 # Player nodes
-@onready var idle: AnimatedSprite3D = $Sprite/idle
-@onready var walk: AnimatedSprite3D = $Sprite/walk
+@onready var sprite: AnimatedSprite3D = $sprite
 @onready var Head: Node3D = $"."
 @onready var camera: Camera3D = $Camera3D
 
-# Last direction
+# Animation
 var last_direction := "front"
+var current_state := "idle"
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera_base_pos = camera.transform.origin
-
-	idle.visible = true
-	walk.visible = false
-	idle.play("front")
+	sprite.play("idle_front")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -85,15 +82,8 @@ func _headbob(time: float) -> Vector3:
 	return pos
 
 
-func show_sprite(sprite: AnimatedSprite3D):
-	idle.visible = false
-	walk.visible = false
-	sprite.visible = true
-
-
 func update_sprite(input_dir: Vector2):
 
-	# Remember last direction
 	if input_dir.length() > 0:
 
 		if input_dir.y > 0:
@@ -118,9 +108,12 @@ func update_sprite(input_dir: Vector2):
 		elif input_dir.x > 0:
 			last_direction = "front_right"
 
-		show_sprite(walk)
-		walk.play(last_direction)
+		current_state = "walk"
 
 	else:
-		show_sprite(idle)
-		idle.play(last_direction)
+		current_state = "idle"
+
+	var animation_name = current_state + "_" + last_direction
+
+	if sprite.animation != animation_name:
+		sprite.play(animation_name)
