@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dnw6sej8l37hw"]
 
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_jj1gn"]
-
 [node name="control" type="Control" unique_id=346887666]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Virtual Joystick" parent="." unique_id=193016825 instance=ExtResource("1_jj1gn")]
-layout_mode = 1
-offset_left = 4.0
-offset_top = 340.0
-offset_right = 304.0
-offset_bottom = 640.0
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=812046137]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 486.0
+offset_right = 154.0
+offset_bottom = 526.0
+scale = Vector2(2.1904912, 2.1904912)
+action_left = &"a"
+action_right = &"d"
+action_up = &"w"
+action_down = &"s"
