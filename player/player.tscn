@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dh5gxyfrg4wbi" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b3451dkywy30m" path="res://player/char/Dash/Dash.png" id="2_8t03j"]
 [ext_resource type="Texture2D" uid="uid://c6cdlcmu1eoe5" path="res://player/char/Idle/Idle.png" id="3_qjkh3"]
+[ext_resource type="Script" uid="uid://df3jkg5gm3t2w" path="res://addons/virtual_joystick/virtual_joystick.gd" id="6_rgyib"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="7_hg6s5"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="8_8t03j"]
 [ext_resource type="Texture2D" uid="uid://kfc41kx5f5ni" path="res://player/char/Walk/walk.png" id="8_kb6p2"]
 [ext_resource type="Texture2D" uid="uid://bxhkayodm56xi" path="res://player/char/Jump/Normal/Jump.png" id="9_2ieo8"]
 
@@ -1155,7 +1158,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jump_back",
-"speed": 9.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1477,6 +1480,32 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_en3rn"]
+resource_name = "camera_touch.gd"
+script/source = "extends Control
+
+signal look(delta: Vector2)
+
+var finger := -1
+
+func _gui_input(event):
+
+	if event is InputEventScreenTouch:
+		print(\"TOUCH\")
+
+		if event.pressed:
+			finger = event.index
+		elif event.index == finger:
+			finger = -1
+
+
+	elif event is InputEventScreenDrag:
+		print(\"DRAG\")
+
+		if event.index == finger:
+			emit_signal(\"look\", event.relative)
+"
+
 [node name="player" type="CharacterBody3D" unique_id=1918745686]
 script = ExtResource("1_rkbax")
 
@@ -1492,9 +1521,81 @@ alpha_cut = 2
 alpha_scissor_threshold = 0.3
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_fnwfd")
-animation = &"walk_front_right"
-frame_progress = 0.15723358
+animation = &"jump_back"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=699698483]
 transform = Transform3D(1, 0, 0, 0, 0.9586427, 0.2846123, 0, -0.2846123, 0.9586427, -0.0042230785, 2.86463, 3.6194658)
 fov = 56.7
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=386540651]
+
+[node name="Virtual_joystick" type="Control" parent="CanvasLayer" unique_id=1272601918]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1118.0
+offset_top = -485.00003
+offset_right = -1078.0
+offset_bottom = -445.00003
+scale = Vector2(41.823925, 41.823925)
+script = ExtResource("6_rgyib")
+
+[node name="Base" type="TextureRect" parent="CanvasLayer/Virtual_joystick" unique_id=690635935]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.91213
+offset_top = -96.84596
+offset_right = 110.08786
+offset_bottom = 103.15404
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.020993024, 0.020993024)
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("7_hg6s5")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="CanvasLayer/Virtual_joystick/Base" unique_id=1493234565]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("8_8t03j")
+stretch_mode = 5
+
+[node name="CameraTouch" type="Control" parent="CanvasLayer" unique_id=1485895590]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -638.0
+offset_right = 20.0
+offset_bottom = -598.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(36.367558, 35.17719)
+script = SubResource("GDScript_en3rn")
+
+[node name="Touch_debug" type="ColorRect" parent="CanvasLayer/CameraTouch" unique_id=1653659712]
+visible = false
+clip_contents = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.27058825)

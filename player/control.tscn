@@ -3,15 +3,3 @@
 [node name="control" type="Control" unique_id=346887666]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=812046137]
-layout_mode = 0
-offset_left = 114.0
-offset_top = 486.0
-offset_right = 154.0
-offset_bottom = 526.0
-scale = Vector2(2.1904912, 2.1904912)
-action_left = &"a"
-action_right = &"d"
-action_up = &"w"
-action_down = &"s"
