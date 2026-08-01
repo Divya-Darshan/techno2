@@ -201,7 +201,6 @@ shape = SubResource("BoxShape3D_5dc06")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1851062406]
 transform = Transform3D(5.832104, 0, 0, 0, 5.832104, 0, 0, 0, 0.5, 0.02571797, 0.9188489, 0)
 billboard = 2
-shaded = true
 alpha_cut = 1
 alpha_scissor_threshold = 0.3
 alpha_antialiasing_mode = 2
