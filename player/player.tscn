@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bxhkayodm56xi" path="res://player/char/Jump/Normal/Jump.png" id="9_2ieo8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
-radius = 0.33496094
-height = 1.8009548
+radius = 0.33107638
+height = 0.66215277
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgm8h"]
 atlas = ExtResource("2_8t03j")
@@ -397,10 +397,6 @@ region = Rect2(288, 256, 48, 64)
 atlas = ExtResource("3_qjkh3")
 region = Rect2(336, 256, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3gkr"]
-atlas = ExtResource("9_2ieo8")
-region = Rect2(0, 0, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebdw7"]
 atlas = ExtResource("9_2ieo8")
 region = Rect2(48, 0, 48, 64)
@@ -428,10 +424,6 @@ region = Rect2(288, 0, 48, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5je6m"]
 atlas = ExtResource("9_2ieo8")
 region = Rect2(336, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hoe0r"]
-atlas = ExtResource("9_2ieo8")
-region = Rect2(0, 64, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0v3p"]
 atlas = ExtResource("9_2ieo8")
@@ -461,10 +453,6 @@ region = Rect2(288, 64, 48, 64)
 atlas = ExtResource("9_2ieo8")
 region = Rect2(336, 64, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ml76h"]
-atlas = ExtResource("9_2ieo8")
-region = Rect2(0, 320, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_frvh1"]
 atlas = ExtResource("9_2ieo8")
 region = Rect2(48, 320, 48, 64)
@@ -492,10 +480,6 @@ region = Rect2(288, 320, 48, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7pq27"]
 atlas = ExtResource("9_2ieo8")
 region = Rect2(336, 320, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8kadx"]
-atlas = ExtResource("9_2ieo8")
-region = Rect2(0, 192, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3imt"]
 atlas = ExtResource("9_2ieo8")
@@ -525,10 +509,6 @@ region = Rect2(288, 192, 48, 64)
 atlas = ExtResource("9_2ieo8")
 region = Rect2(336, 192, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lv6rk"]
-atlas = ExtResource("9_2ieo8")
-region = Rect2(0, 128, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7062"]
 atlas = ExtResource("9_2ieo8")
 region = Rect2(48, 128, 48, 64)
@@ -556,10 +536,6 @@ region = Rect2(288, 128, 48, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj0ii"]
 atlas = ExtResource("9_2ieo8")
 region = Rect2(336, 128, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qn1c4"]
-atlas = ExtResource("9_2ieo8")
-region = Rect2(0, 256, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8r34i"]
 atlas = ExtResource("9_2ieo8")
@@ -1133,9 +1109,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v3gkr")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_ebdw7")
 }, {
 "duration": 1.0,
@@ -1156,14 +1129,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5je6m")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"jump_back",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hoe0r")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f0v3p")
 }, {
@@ -1187,12 +1157,9 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jump_back_left",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ml76h")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_frvh1")
 }, {
@@ -1216,12 +1183,9 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jump_back_right",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8kadx")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u3imt")
 }, {
@@ -1245,12 +1209,9 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jump_front",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lv6rk")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r7062")
 }, {
@@ -1274,12 +1235,9 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jump_front_left",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qn1c4")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8r34i")
 }, {
@@ -1303,7 +1261,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jump_front_right",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1510,7 +1468,7 @@ func _gui_input(event):
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1031255661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021050036, 0.9613986, -0.015592694)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021050036, 0.33134294, 0.10987145)
 shape = SubResource("CapsuleShape3D_1bvp3")
 
 [node name="sprite" type="AnimatedSprite3D" parent="." unique_id=1724733164]
