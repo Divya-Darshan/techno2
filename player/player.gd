@@ -9,7 +9,7 @@ const BOB_FREQ = 2.0
 const BOB_AMP = 0.07
 var t_bob = 0.0
 var camera_base_pos: Vector3
-var press_count := 0
+var jump_played := false
 
 # Player nodes
 @onready var sprite: AnimatedSprite3D = $sprite
@@ -68,6 +68,7 @@ func _physics_process(delta: float) -> void:
 	# Jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_played = false
 
 	# Movement
 	var input_dir := Input.get_vector("a", "d", "w", "s")
@@ -93,10 +94,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Debug node
 	if Input.is_action_pressed("0"):
-		press_count += 1
-
-		if press_count == 3:
-			touch_debug.visible = true
+			touch_debug.visible = !touch_debug.visible
 
 	move_and_slide()
 
@@ -134,20 +132,59 @@ func update_sprite(input_dir: Vector2):
 		elif input_dir.x > 0:
 			last_direction = "front_right"
 
-	# Animation priority
+
+	#dash
 	if Input.is_action_pressed("dash"):
-		current_state = "dash"
 
-	elif not is_on_floor():
-		current_state = "jump"
+		jump_played = false
 
-	elif input_dir.length() > 0:
+		var anim = "dash_" + last_direction
+
+		if sprite.animation != anim:
+			sprite.play(anim)
+
+		return
+
+	if not is_on_floor():
+
+		if !jump_played:
+
+			jump_played = true
+
+			var anim = "jump_" + last_direction
+
+			if sprite.animation != anim:
+				sprite.play(anim)
+
+		# Jump animation finished?
+		elif !sprite.is_playing():
+
+			if input_dir.length() > 0:
+
+				var anim = "walk_" + last_direction
+
+				if sprite.animation != anim:
+					sprite.play(anim)
+
+			else:
+
+				var anim = "idle_" + last_direction
+
+				if sprite.animation != anim:
+					sprite.play(anim)
+
+		return
+
+
+	# Reset when landing
+	jump_played = false
+
+	if input_dir.length() > 0:
 		current_state = "walk"
-
 	else:
 		current_state = "idle"
 
-	var animation_name = current_state + "_" + last_direction
+	var anim = current_state + "_" + last_direction
 
-	if sprite.animation != animation_name:
-		sprite.play(animation_name)
+	if sprite.animation != anim:
+		sprite.play(anim)
