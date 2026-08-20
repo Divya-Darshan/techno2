@@ -1479,7 +1479,7 @@ alpha_cut = 2
 alpha_scissor_threshold = 0.3
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_fnwfd")
-animation = &"jump_front_left"
+animation = &"walk_front_right"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=699698483]
 transform = Transform3D(1, 0, 0, 0, 0.9586427, 0.2846123, 0, -0.2846123, 0.9586427, -0.0042230785, 2.86463, 3.6194658)
