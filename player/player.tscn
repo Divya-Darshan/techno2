@@ -1488,6 +1488,13 @@ fov = 56.7
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=386540651]
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer" unique_id=407869022]
+position = Vector2(919, 420.99997)
+scale = Vector2(0.34072083, 0.3295685)
+texture_normal = ExtResource("9_hg6s5")
+passby_press = true
+action = "space"
+
 [node name="Virtual_joystick" type="Control" parent="CanvasLayer" unique_id=1272601918]
 layout_mode = 3
 anchors_preset = 0
@@ -1558,10 +1565,3 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0.27058825)
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/CameraTouch" unique_id=407869022]
-position = Vector2(9.596465, 20.410954)
-scale = Vector2(0.009368813, 0.009368813)
-texture_normal = ExtResource("9_hg6s5")
-passby_press = true
-action = "space"
