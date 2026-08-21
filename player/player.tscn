@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="8_8t03j"]
 [ext_resource type="Texture2D" uid="uid://kfc41kx5f5ni" path="res://player/char/Walk/walk.png" id="8_kb6p2"]
 [ext_resource type="Texture2D" uid="uid://bxhkayodm56xi" path="res://player/char/Jump/Normal/Jump.png" id="9_2ieo8"]
+[ext_resource type="Texture2D" uid="uid://m06pj5v46ld2" path="res://img/proto.png" id="9_hg6s5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
 radius = 0.33107638
@@ -1479,7 +1480,7 @@ alpha_cut = 2
 alpha_scissor_threshold = 0.3
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_fnwfd")
-animation = &"jump_front_left"
+animation = &"walk_front_right"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=699698483]
 transform = Transform3D(1, 0, 0, 0, 0.9586427, 0.2846123, 0, -0.2846123, 0.9586427, -0.0042230785, 2.86463, 3.6194658)
@@ -1557,3 +1558,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0.27058825)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/CameraTouch" unique_id=407869022]
+position = Vector2(9.596465, 20.410954)
+scale = Vector2(0.009368813, 0.009368813)
+texture_normal = ExtResource("9_hg6s5")
+passby_press = true
+action = "space"
