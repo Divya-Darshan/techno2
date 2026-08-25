@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="8_8t03j"]
 [ext_resource type="Texture2D" uid="uid://kfc41kx5f5ni" path="res://player/char/Walk/walk.png" id="8_kb6p2"]
 [ext_resource type="Texture2D" uid="uid://bxhkayodm56xi" path="res://player/char/Jump/Normal/Jump.png" id="9_2ieo8"]
+[ext_resource type="Texture2D" uid="uid://m06pj5v46ld2" path="res://img/proto.png" id="9_hg6s5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
 radius = 0.33107638
@@ -1486,6 +1487,13 @@ transform = Transform3D(1, 0, 0, 0, 0.9586427, 0.2846123, 0, -0.2846123, 0.95864
 fov = 56.7
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=386540651]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer" unique_id=407869022]
+position = Vector2(919, 420.99997)
+scale = Vector2(0.34072083, 0.3295685)
+texture_normal = ExtResource("9_hg6s5")
+passby_press = true
+action = "space"
 
 [node name="Virtual_joystick" type="Control" parent="CanvasLayer" unique_id=1272601918]
 layout_mode = 3
