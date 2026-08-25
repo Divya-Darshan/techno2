@@ -1469,18 +1469,18 @@ func _gui_input(event):
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1031255661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021050036, 0.33134294, 0.10987145)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041612208, 0.34399217, 0.10987145)
 shape = SubResource("CapsuleShape3D_1bvp3")
 
 [node name="sprite" type="AnimatedSprite3D" parent="." unique_id=1724733164]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025211275, 1.2061597, 0.008592606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049696267, 1.1082034, 0.008592606)
 pixel_size = 0.1
 billboard = 2
 alpha_cut = 2
 alpha_scissor_threshold = 0.3
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_fnwfd")
-animation = &"walk_front_right"
+animation = &"dash_front"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=699698483]
 transform = Transform3D(1, 0, 0, 0, 0.9586427, 0.2846123, 0, -0.2846123, 0.9586427, -0.0042230785, 2.86463, 3.6194658)
@@ -1558,6 +1558,7 @@ scale = Vector2(36.367558, 35.17719)
 script = SubResource("GDScript_en3rn")
 
 [node name="Touch_debug" type="ColorRect" parent="CanvasLayer/CameraTouch" unique_id=1653659712]
+visible = false
 clip_contents = true
 layout_mode = 0
 offset_right = 40.0
