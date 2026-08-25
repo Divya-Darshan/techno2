@@ -2,31 +2,6 @@
 
 [ext_resource type="MeshLibrary" uid="uid://drfsdgprntijr" path="res://asset/tiles/tileset.tres" id="1_37kl0"]
 [ext_resource type="PackedScene" uid="uid://bqyj4duv3rrlm" path="res://player/player.tscn" id="2_8uh7m"]
-[ext_resource type="PackedScene" uid="uid://cl13hj3dxu3d1" path="res://asset/sprtes/eris/eris.tscn" id="3_dpmuy"]
-[ext_resource type="PackedScene" uid="uid://dgn2qpu5rnsje" path="res://asset/sprtes/duck/duck.tscn" id="4_yww54"]
-[ext_resource type="PackedScene" uid="uid://yiys1ll8626c" path="res://asset/sprtes/girlfriend/girlfriend.tscn" id="5_j75vh"]
-[ext_resource type="PackedScene" uid="uid://c41c8q5a5ljmv" path="res://asset/sprtes/kit/kit.tscn" id="6_rrpoi"]
-[ext_resource type="PackedScene" uid="uid://isp5uvc48np0" path="res://asset/sprtes/kit/gobbles.tscn" id="7_34fux"]
-[ext_resource type="PackedScene" uid="uid://d1b75s3ahmh3d" path="res://asset/sprtes/MD/md.tscn" id="8_ppv7d"]
-[ext_resource type="PackedScene" uid="uid://4bxpl2pedlxj" path="res://asset/sprtes/MD/air.tscn" id="9_naet1"]
-[ext_resource type="PackedScene" uid="uid://bnlv1retel8wb" path="res://asset/sprtes/Peppino Spaghetti/Peppino.tscn" id="10_6qlrc"]
-[ext_resource type="PackedScene" uid="uid://uod6p26ctups" path="res://asset/sprtes/gardevoir/gardevodir.tscn" id="11_shobf"]
-[ext_resource type="PackedScene" uid="uid://crxc47qvmk0jh" path="res://asset/sprtes/medic/medic.tscn" id="12_lb1cv"]
-[ext_resource type="PackedScene" uid="uid://3xh3ni4fphj8" path="res://asset/sprtes/cuphead/cuphead.tscn" id="13_2h37t"]
-[ext_resource type="PackedScene" uid="uid://b4qds0otjcp1f" path="res://asset/sprtes/sonic.exe/sonicexe.tscn" id="14_adp8l"]
-[ext_resource type="PackedScene" uid="uid://bu0uk34xp8l38" path="res://asset/sprtes/minecraft bed/bed.blend" id="15_dvnpp"]
-[ext_resource type="PackedScene" uid="uid://by5jfi0g22vx2" path="res://asset/sprtes/eagle/eagle.tscn" id="16_ffwl0"]
-[ext_resource type="PackedScene" uid="uid://bqtd3545b4vyh" path="res://asset/sprtes/sunflower/sunflower.tscn" id="17_yg34o"]
-[ext_resource type="PackedScene" uid="uid://d23sifhx2snxe" path="res://asset/sprtes/huggy/huggy.tscn" id="18_21gct"]
-[ext_resource type="PackedScene" uid="uid://b1rg40o8cvpu0" path="res://asset/sprtes/404/404.tscn" id="19_svjfs"]
-[ext_resource type="PackedScene" uid="uid://c0b7a285wao1w" path="res://asset/sprtes/setsuna/setsuna.tscn" id="20_1f472"]
-[ext_resource type="PackedScene" uid="uid://djs3sim0pej3v" path="res://asset/sprtes/under/sans_night/sans_night.tscn" id="21_2kuyq"]
-[ext_resource type="PackedScene" uid="uid://sw6g13ufg73y" path="res://asset/sprtes/under/sans/sans.tscn" id="22_rlt3e"]
-[ext_resource type="PackedScene" uid="uid://bk4rike7uiwm3" path="res://asset/sprtes/duck/DUCKPRO.tscn" id="23_wxlvt"]
-[ext_resource type="PackedScene" uid="uid://cq71lp3gryadv" path="res://asset/sprtes/nopoopjuly/nopoop.tscn" id="24_wy5de"]
-[ext_resource type="PackedScene" uid="uid://bf8uuq64q84m5" path="res://asset/sprtes/triger reblox/flagrent.blend" id="25_xbr6t"]
-[ext_resource type="PackedScene" uid="uid://di8lg1r2aorje" path="res://asset/sprtes/triger reblox/bear.blend" id="26_lmr7q"]
-[ext_resource type="PackedScene" uid="uid://bjmg6nd26l220" path="res://asset/sprtes/spongpatric/spang.tscn" id="27_kvqi2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dpmuy"]
 
@@ -53,88 +28,6 @@ data = {
 }
 
 [node name="player" parent="." unique_id=1918745686 instance=ExtResource("2_8uh7m")]
-
-[node name="eris" parent="." unique_id=1573923652 instance=ExtResource("3_dpmuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6671648, 0.055313826, -56.338673)
-
-[node name="duck" parent="." unique_id=1842219288 instance=ExtResource("4_yww54")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.716518, 0.01428777, -47.40493)
-
-[node name="gitlfriend" parent="." unique_id=443758830 instance=ExtResource("5_j75vh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7983456, 0.0614509, -30.659245)
-
-[node name="kit" parent="." unique_id=185657391 instance=ExtResource("6_rrpoi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3756764, 0, -30.470854)
-
-[node name="Gobbles" parent="." unique_id=225260275 instance=ExtResource("7_34fux")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5072856, 0, -29.991215)
-
-[node name="md" parent="." unique_id=715560852 instance=ExtResource("8_ppv7d")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.147047, 0, -48.507965)
-
-[node name="air" parent="." unique_id=223679020 instance=ExtResource("9_naet1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.409775, -12.362311, -47.4109)
-
-[node name="Peppino" parent="." unique_id=1209328186 instance=ExtResource("10_6qlrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.978918, 0, -30.333145)
-
-[node name="gardevodir" parent="." unique_id=1192494707 instance=ExtResource("11_shobf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.794431, 0, -30.608803)
-
-[node name="medic" parent="." unique_id=638996426 instance=ExtResource("12_lb1cv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.111973, 0, -30.674187)
-
-[node name="cuphead" parent="." unique_id=958880276 instance=ExtResource("13_2h37t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.36432, 0.028802872, -30.582582)
-
-[node name="sonicexe" parent="." unique_id=1873660891 instance=ExtResource("14_adp8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.57538, 0, -30.525005)
-
-[node name="bed" parent="." unique_id=1143322887 instance=ExtResource("15_dvnpp")]
-transform = Transform3D(0.7957907, 0, 0.6055718, 0, 1, 0, -0.6055718, 0, 0.7957907, -13.362672, 1.7881392e-07, -29.758198)
-
-[node name="sonicexe2" parent="." unique_id=119153451 instance=ExtResource("16_ffwl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0954843, 2.5528038, -30.795292)
-
-[node name="sunflower" parent="." unique_id=2129899472 instance=ExtResource("17_yg34o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1485522, 0, -38.30153)
-
-[node name="huggy" parent="." unique_id=1560751790 instance=ExtResource("18_21gct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054380298, -38.366085)
-
-[node name="406" parent="." unique_id=1366251172 instance=ExtResource("19_svjfs")]
-transform = Transform3D(1.7350023, 0, 0, 0, 1.7350023, 0, 0, 0, 1.7350023, -16.105825, 0, -30.55867)
-
-[node name="setsuna" parent="." unique_id=758756344 instance=ExtResource("20_1f472")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.905349, 0, -38.58709)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=30479691]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6883144, 0.26068234)
-light_energy = 1.634
-light_indirect_energy = 0.0
-light_volumetric_fog_energy = 2.743
-light_specular = 16.0
-
-[node name="sans_night" parent="." unique_id=1252547830 instance=ExtResource("21_2kuyq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.875273, 0, -39.29665)
-
-[node name="sans" parent="." unique_id=1253723791 instance=ExtResource("22_rlt3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2568984, 0, -39.031452)
-
-[node name="duckpro" parent="." unique_id=578619554 instance=ExtResource("23_wxlvt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.381798, 0, -38.99708)
-
-[node name="nopoop" parent="." unique_id=810542413 instance=ExtResource("24_wy5de")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.196497, 4.9743996, -49.330704)
-
-[node name="flagrent" parent="." unique_id=1693939584 instance=ExtResource("25_xbr6t")]
-transform = Transform3D(0.1773846, 0, 0.1394603, 0, 0.22564235, 0, -0.1394603, 0, 0.1773846, 5.842435, 1.5087495, -57.828587)
-
-[node name="bear" parent="." unique_id=2131438471 instance=ExtResource("26_lmr7q")]
-transform = Transform3D(0.13362396, 0, 0.17153966, 0, 0.21744248, 0, -0.17153966, 0, 0.13362396, 8.721857, -0.19904846, -54.813698)
-
-[node name="spong" parent="." unique_id=1701118414 instance=ExtResource("27_kvqi2")]
-transform = Transform3D(0.59541607, 0, 0, 0, 0.59541607, 0, 0, 0, 0.59541607, 11.427395, 0, -53.815197)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1656050805]
 transform = Transform3D(0.69773334, 0, 0, 0, 0.69773334, 0, 0, 0, 0.69773334, -18.541605, 0.7922332, -20.205872)
