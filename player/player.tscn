@@ -1558,7 +1558,6 @@ scale = Vector2(36.367558, 35.17719)
 script = SubResource("GDScript_en3rn")
 
 [node name="Touch_debug" type="ColorRect" parent="CanvasLayer/CameraTouch" unique_id=1653659712]
-visible = false
 clip_contents = true
 layout_mode = 0
 offset_right = 40.0
