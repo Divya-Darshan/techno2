@@ -1,0 +1,22 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://dgohtoijhq2fb"]
+
+[ext_resource type="Texture2D" uid="uid://bjxddoyybg771" path="res://meshes/textures/floor0.png" id="1"]
+
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_texture = ExtResource("1")
+metallic_specular = 0.0
+
+[resource]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2.00001, 2),
+"attribute_data": PackedByteArray("AAAAAACgKj8AoKo+AKAqPwAAAAAAAIA/AKCqPgAAgD8AoCo/AKAqPwCgqj4AoCo/AKAqPwCgqj4AoKo+AKCqPgCgKj8AoCo/AKAqPwCgqj4AAIA/AKAqPwAAgD8AoKo+AKAqPwCgqj4AoCo/AAAAAAAAgD8AoKo+AACAPwAAAAAAoCo/AACAPwCgKj8AoCo/AACAPwAAgD8AAIA/AKAqPwCgqj4AAIA/AKCqPgCgKj8AoCo/AACAPwCgKj8AoCo/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("1"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACAvwAAgD8AAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC/AACAPwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC/////v2UAAAD///+/LgAAAP///79vAAAA////vy8AAAD/f///bwAAAP9///9vAAAA/3///y8AAAD/f///cgAAAP////9qAAAA/////2MAAAD/////AAAAAP////9nAAAA/3//v2QAAAD/f/+/dAAAAP9//79lAAAA/3//v2kAAAD/f/+/bwAAAP9//78vAAAA/3//vy8AAAD/f/+/ZQAAAP///78vAAAA////v4zW7EH///+/AADcQf///78AANxB")
+}]

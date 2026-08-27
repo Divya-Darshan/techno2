@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ql2x37ts4lou"]
+
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/floor_fortress3.tres" id="1"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_fortress0.tres" id="2"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/floor_fortress1.tres" id="3"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/floor_fortress2.tres" id="4"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_fortress1.tres" id="5"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_fortress2.tres" id="6"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_fortress3.tres" id="7"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/floor_fortress0.tres" id="8"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/ceil_fortress0.tres" id="9"]
+
+[node name="theme3" type="Node3D" unique_id=1668167339]
+
+[node name="0" type="MeshInstance3D" parent="." unique_id=2023455066]
+mesh = ExtResource("8")
+
+[node name="1" type="MeshInstance3D" parent="." unique_id=349948134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+mesh = ExtResource("3")
+
+[node name="2" type="MeshInstance3D" parent="." unique_id=585123485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("4")
+
+[node name="3" type="MeshInstance3D" parent="." unique_id=1481153674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+mesh = ExtResource("1")
+
+[node name="4" type="MeshInstance3D" parent="." unique_id=515393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+mesh = ExtResource("2")
+
+[node name="5" type="MeshInstance3D" parent="." unique_id=1730679742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+mesh = ExtResource("5")
+
+[node name="6" type="MeshInstance3D" parent="." unique_id=1501320585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+mesh = ExtResource("6")
+
+[node name="7" type="MeshInstance3D" parent="." unique_id=1117013058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+mesh = ExtResource("7")
+
+[node name="8" type="MeshInstance3D" parent="." unique_id=218754708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+mesh = ExtResource("9")
