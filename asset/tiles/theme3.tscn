@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dpykfjrp3m8xc"]
+
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/ceil_sewer_alt0.tres" id="1"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_sewer_alt3.tres" id="2"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/floor_sewer_alt0.tres" id="3"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_sewer_alt2.tres" id="4"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_sewer_alt1.tres" id="5"]
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/wall_sewer_alt0.tres" id="7"]
+
+[node name="theme3" type="Node3D" unique_id=1665594463]
+
+[node name="0" type="MeshInstance3D" parent="." unique_id=307137421]
+mesh = ExtResource("3")
+
+[node name="1" type="MeshInstance3D" parent="." unique_id=263889848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+mesh = ExtResource("3")
+
+[node name="2" type="MeshInstance3D" parent="." unique_id=95305177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("3")
+
+[node name="3" type="MeshInstance3D" parent="." unique_id=1129717805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+mesh = ExtResource("3")
+
+[node name="4" type="MeshInstance3D" parent="." unique_id=2076659807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+mesh = ExtResource("2")
+
+[node name="5" type="MeshInstance3D" parent="." unique_id=1597009108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+mesh = ExtResource("4")
+
+[node name="6" type="MeshInstance3D" parent="." unique_id=112157183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+mesh = ExtResource("5")
+
+[node name="7" type="MeshInstance3D" parent="." unique_id=286887025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+mesh = ExtResource("7")
+
+[node name="8" type="MeshInstance3D" parent="." unique_id=255522987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+mesh = ExtResource("1")
