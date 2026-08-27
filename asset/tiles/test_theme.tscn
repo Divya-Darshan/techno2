@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c36sjqr8d2r2y"]
+
+[ext_resource type="ArrayMesh" path="res://meshes/array_meshes/test0.tres" id="1"]
+
+[node name="test_theme" type="Node3D" unique_id=1307929930]
+
+[node name="0" type="MeshInstance3D" parent="." unique_id=214144429]
+mesh = ExtResource("1")
