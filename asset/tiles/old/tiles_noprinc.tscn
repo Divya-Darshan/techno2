@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://do03hglrtcgkt"]
-
-[ext_resource type="PackedScene" uid="uid://c70m8ohttcjit" path="res://asset/tiles/tiles_noprinc.blend" id="1_860qb"]
-
-[node name="tiles_noprinc" unique_id=1282502047 instance=ExtResource("1_860qb")]
