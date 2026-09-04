@@ -12,7 +12,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
 radius = 0.33107638
-height = 0.66215277
+height = 0.7077691
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgm8h"]
 atlas = ExtResource("2_8t03j")
@@ -1469,7 +1469,7 @@ func _gui_input(event):
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1031255661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041612208, 0.34399217, 0.10987145)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041612208, 0.35777256, 0.10987145)
 shape = SubResource("CapsuleShape3D_1bvp3")
 
 [node name="sprite" type="AnimatedSprite3D" parent="." unique_id=1724733164]
