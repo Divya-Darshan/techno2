@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://clrmfqrbi2wb8"]
-
-[ext_resource type="PackedScene" uid="uid://brlycwdx05xkm" path="res://asset/tiles/tileset.glb" id="1_80vml"]
-
-[node name="tileset" unique_id=378725997 instance=ExtResource("1_80vml")]
