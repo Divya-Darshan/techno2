@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqb2ar0b57ycr"]
 
 [ext_resource type="Texture2D" uid="uid://df61vjltr8pra" path="res://img/test/check.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cae2facd1m5xd" path="res://foliage/PNG/Shaded/sprite_0052.png" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bqyj4duv3rrlm" path="res://player/player.tscn" id="27_xuqvo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
@@ -11,10 +12,18 @@ albedo_texture = ExtResource("2_0xm2m")
 [node name="Main" type="Node3D" unique_id=1497525646]
 
 [node name="player" parent="." unique_id=1918745686 instance=ExtResource("27_xuqvo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.21896, 0.93083763, 146.78693)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.742249, 0.93083763, 27.293549)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=725290810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.691849, 0, 22.356987)
 material_override = SubResource("StandardMaterial3D_h2yge")
 use_collision = true
 size = Vector3(771.19415, 1, 428.79443)
+
+[node name="s" type="Sprite3D" parent="." unique_id=1696259283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.133171, 0.9902036, -6.5275984)
+modulate = Color(0.5687506, 0.6574836, 0.28690532, 1)
+pixel_size = 0.001
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_lquwl")
