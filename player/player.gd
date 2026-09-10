@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const SPEED = 10.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.0
 const CAMERA_SENSE = 0.10
 
 # Camera shake
@@ -30,17 +30,17 @@ func _ready() -> void:
 	
 
 
-
 func _on_camera_look(delta: Vector2):
 	print(delta)
 	Head.rotate_y(-delta.x * CAMERA_SENSE)
 
 	camera.rotate_x(-delta.y * CAMERA_SENSE)
 
+	# Restrict pitch angle: look down up to -20deg, look up up to 30deg
 	camera.rotation.x = clamp(
 		camera.rotation.x,
-		deg_to_rad(-60),
-		deg_to_rad(80)
+		deg_to_rad(-25),
+		deg_to_rad(20)
 	)
 
 
@@ -51,8 +51,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		Head.rotate_y(-event.relative.x * CAMERA_SENSE)
 		camera.rotate_x(-event.relative.y * CAMERA_SENSE)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(100))
-
+		# Restrict pitch angle: keep values identical to _on_camera_look
+		camera.rotation.x = clamp(
+			camera.rotation.x,
+			deg_to_rad(-20),
+			deg_to_rad(30)
+		)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
