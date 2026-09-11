@@ -14,7 +14,7 @@ var jump_played := false
 # Player nodes
 @onready var sprite: AnimatedSprite3D = $sprite
 @onready var Head: Node3D = $"."
-@onready var camera: Camera3D = $Camera3D
+@onready var camera: Camera3D = $Camera_1
 @onready var camera_touch: Control = $CanvasLayer/CameraTouch
 @onready var touch_debug: ColorRect = $CanvasLayer/CameraTouch/Touch_debug
 
