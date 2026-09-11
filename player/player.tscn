@@ -5,13 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://c6cdlcmu1eoe5" path="res://player/char/Idle/Idle.png" id="3_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://medbbcl3b0kb" path="res://player/hold/guns/minigun.png" id="6_2ieo8"]
 [ext_resource type="Script" uid="uid://df3jkg5gm3t2w" path="res://addons/virtual_joystick/virtual_joystick.gd" id="6_rgyib"]
-[ext_resource type="Texture2D" uid="uid://h13a3myp5afj" path="res://player/hold/guns/shot.png" id="7_ebec5"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="7_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="8_8t03j"]
 [ext_resource type="Texture2D" uid="uid://kfc41kx5f5ni" path="res://player/char/Walk/walk.png" id="8_kb6p2"]
 [ext_resource type="Texture2D" uid="uid://bxhkayodm56xi" path="res://player/char/Jump/Normal/Jump.png" id="9_2ieo8"]
 [ext_resource type="Texture2D" uid="uid://m06pj5v46ld2" path="res://img/proto.png" id="9_hg6s5"]
-[ext_resource type="Texture2D" uid="uid://dalqrt5mym40g" path="res://player/hold/guns/pistol.png" id="12_ebec5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
 radius = 0.33107638
@@ -1468,92 +1466,6 @@ func _gui_input(event):
 			emit_signal(\"look\", event.relative)
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wveng"]
-atlas = ExtResource("12_ebec5")
-region = Rect2(0, 0, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iiowf"]
-atlas = ExtResource("12_ebec5")
-region = Rect2(15, 0, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sxh3c"]
-atlas = ExtResource("12_ebec5")
-region = Rect2(30, 0, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h44h0"]
-atlas = ExtResource("12_ebec5")
-region = Rect2(45, 0, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2h1m"]
-atlas = ExtResource("12_ebec5")
-region = Rect2(60, 0, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mrho2"]
-atlas = ExtResource("12_ebec5")
-region = Rect2(75, 0, 15, 12)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_37kv6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wveng")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iiowf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sxh3c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h44h0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2h1m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mrho2")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 8.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lv6rk"]
-atlas = ExtResource("7_ebec5")
-region = Rect2(0, 0, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qn1c4"]
-atlas = ExtResource("7_ebec5")
-region = Rect2(10, 0, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e43gw"]
-atlas = ExtResource("7_ebec5")
-region = Rect2(20, 0, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kfspb"]
-atlas = ExtResource("7_ebec5")
-region = Rect2(30, 0, 10, 11)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wveng"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lv6rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qn1c4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e43gw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kfspb")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 8.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wsa1w"]
 atlas = ExtResource("6_2ieo8")
 region = Rect2(0, 0, 29, 13)
@@ -1601,7 +1513,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [node name="player" type="CharacterBody3D" unique_id=1918745686]
@@ -1623,7 +1535,7 @@ animation = &"dash_front"
 
 [node name="Camera_1" type="Camera3D" parent="." unique_id=1897763365]
 transform = Transform3D(1, 0, 0, 0, 0.9878198, 0.15560281, 0, -0.15560281, 0.9878198, -0.008446157, 1.7734199, 0.0037837029)
-fov = 56.7
+fov = 50.0
 
 [node name="Camera_3" type="Camera3D" parent="." unique_id=699698483]
 transform = Transform3D(1, 0, 0, 0, 0.9390011, 0.34391415, 0, -0.34391415, 0.9390011, -0.0042230785, 2.3311815, 3.3813448)
@@ -1711,32 +1623,11 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0.27058825)
 
 [node name="hold" type="Node3D" parent="." unique_id=1696423184]
-transform = Transform3D(0.99999994, 2.3283064e-10, 3.7252903e-09, -4.656613e-10, 0.99999994, 0, 0, 0, 0.9999999, -1.8626451e-09, 0, 7.450581e-09)
+transform = Transform3D(0.99999994, 2.3283064e-10, 3.7252903e-09, -4.656613e-10, 1, 0, 0, 0, 0.99999994, -1.8626451e-09, -1.1920929e-07, -2.9802322e-08)
 
-[node name="pistol" type="AnimatedSprite3D" parent="hold" unique_id=398546436]
-transform = Transform3D(0.021232523, -1.2663854e-09, 2.6685364, 1.252484e-09, 2.6686206, 1.256461e-09, -2.6685367, 1.2424474e-09, 0.021232544, 0.56707096, 1.4261227, -0.88094985)
-visible = false
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_37kv6")
-autoplay = "default"
-
-[node name="flash" type="AnimatedSprite3D" parent="hold/pistol" unique_id=61128540]
-transform = Transform3D(0.77258486, 0, -9.313226e-10, 1.9428903e-16, 0.77258486, 3.2526065e-18, 9.313226e-10, -1.0581813e-16, 0.77258486, 0.079888314, 0.007698953, -0.006226152)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_wveng")
-autoplay = "default"
-frame_progress = 0.14086187
-
-[node name="minigun" type="AnimatedSprite3D" parent="hold" unique_id=680243396]
-transform = Transform3D(-0.015765294, -2.7760239e-10, 2.8338919, 0.1476356, 2.830087, 0.0008213145, -2.8300443, 0.14763787, -0.015743898, 0.55220866, 1.5196719, -0.8866171)
+[node name="gun" type="AnimatedSprite3D" parent="hold" unique_id=680243396]
+transform = Transform3D(-0.015765289, -2.7760227e-10, 2.8338912, 0.14763564, 2.8300874, 0.0008213149, -2.8300445, 0.14763781, -0.015743896, 0.5522085, 1.4669102, -1.1099238)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_t2gii")
 autoplay = "default"
 frame_progress = 0.011306516
-
-[node name="flash" type="AnimatedSprite3D" parent="hold/minigun" unique_id=1821823389]
-transform = Transform3D(0.77258503, -3.7252903e-09, -9.313226e-10, 0, 0.7725851, 0, 0, 2.910383e-11, 0.772585, 0.1592054, -0.020751297, 0.0019134879)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_wveng")
-autoplay = "default"
-frame_progress = 0.9043297

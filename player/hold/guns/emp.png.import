@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccduc6dvc881v"
-path.s3tc="res://.godot/imported/uzi.png-ff6aef0b2fb2a9494ca0fb6bd883e6c3.s3tc.ctex"
-path.etc2="res://.godot/imported/uzi.png-ff6aef0b2fb2a9494ca0fb6bd883e6c3.etc2.ctex"
+uid="uid://ch2hohtvfnxw6"
+path.s3tc="res://.godot/imported/emp.png-dba03f67b068a120b70a7de0a57810cd.s3tc.ctex"
+path.etc2="res://.godot/imported/emp.png-dba03f67b068a120b70a7de0a57810cd.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://player/hold/guns/uzi.png"
-dest_files=["res://.godot/imported/uzi.png-ff6aef0b2fb2a9494ca0fb6bd883e6c3.s3tc.ctex", "res://.godot/imported/uzi.png-ff6aef0b2fb2a9494ca0fb6bd883e6c3.etc2.ctex"]
+source_file="res://player/hold/guns/emp.png"
+dest_files=["res://.godot/imported/emp.png-dba03f67b068a120b70a7de0a57810cd.s3tc.ctex", "res://.godot/imported/emp.png-dba03f67b068a120b70a7de0a57810cd.etc2.ctex"]
 
 [params]
 
