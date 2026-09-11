@@ -1483,7 +1483,7 @@ sprite_frames = SubResource("SpriteFrames_fnwfd")
 animation = &"dash_front"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=699698483]
-transform = Transform3D(1, 0, 0, 0, 0.97030205, 0.24189664, 0, -0.24189664, 0.97030205, -0.0042230785, 1.8838408, 3.6989565)
+transform = Transform3D(1, 0, 0, 0, 0.9390011, 0.34391415, 0, -0.34391415, 0.9390011, -0.0042230785, 2.3311815, 3.3813448)
 fov = 56.7
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=386540651]
