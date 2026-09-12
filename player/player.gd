@@ -11,6 +11,10 @@ var t_bob = 0.0
 var camera_base_pos: Vector3
 var jump_played := false
 
+#exports please finish is me 😒 next day
+@export var cameras : Array[Camera3D]=[]
+var current_index=0
+
 # Player nodes
 @onready var sprite: AnimatedSprite3D = $sprite
 @onready var Head: Node3D = $"."
