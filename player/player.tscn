@@ -1516,8 +1516,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="player" type="CharacterBody3D" unique_id=1918745686]
+[node name="player" type="CharacterBody3D" unique_id=1918745686 node_paths=PackedStringArray("cameras")]
 script = ExtResource("1_rkbax")
+cameras = [NodePath("Camera_1"), NodePath("Camera_2")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1031255661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041612208, 0.35777256, 0.10987145)
@@ -1537,8 +1538,8 @@ animation = &"dash_front"
 transform = Transform3D(1, 0, 0, 0, 0.9878198, 0.15560281, 0, -0.15560281, 0.9878198, -0.008446157, 1.7734199, 0.0037837029)
 fov = 50.0
 
-[node name="Camera_3" type="Camera3D" parent="." unique_id=699698483]
-transform = Transform3D(1, 0, 0, 0, 0.9390011, 0.34391415, 0, -0.34391415, 0.9390011, -0.0042230785, 2.3311815, 3.3813448)
+[node name="Camera_2" type="Camera3D" parent="." unique_id=699698483]
+transform = Transform3D(1, 0, 0, 0, 0.9390011, 0.34391415, 0, -0.34391415, 0.9390011, -0.0042230785, 2.3311815, 2.9820614)
 fov = 56.7
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=386540651]
@@ -1626,7 +1627,7 @@ color = Color(1, 1, 1, 0.27058825)
 transform = Transform3D(0.99999994, 2.3283064e-10, 3.7252903e-09, -4.656613e-10, 1, 0, 0, 0, 0.99999994, -1.8626451e-09, -1.1920929e-07, -2.9802322e-08)
 
 [node name="gun" type="AnimatedSprite3D" parent="hold" unique_id=680243396]
-transform = Transform3D(-0.015765289, -2.7760227e-10, 2.8338912, 0.14763564, 2.8300874, 0.0008213149, -2.8300445, 0.14763781, -0.015743896, 0.5522085, 1.4669102, -1.1099238)
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, -1.1099237)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_t2gii")
 autoplay = "default"
