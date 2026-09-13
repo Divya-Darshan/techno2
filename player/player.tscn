@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3451dkywy30m" path="res://player/char/Dash/Dash.png" id="2_8t03j"]
 [ext_resource type="Texture2D" uid="uid://c6cdlcmu1eoe5" path="res://player/char/Idle/Idle.png" id="3_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://medbbcl3b0kb" path="res://player/hold/guns/minigun.png" id="6_2ieo8"]
+[ext_resource type="Script" uid="uid://dwtpxj2uwckan" path="res://player/head.gd" id="6_ebec5"]
 [ext_resource type="Script" uid="uid://df3jkg5gm3t2w" path="res://addons/virtual_joystick/virtual_joystick.gd" id="6_rgyib"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="7_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="8_8t03j"]
@@ -1440,32 +1441,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_en3rn"]
-resource_name = "camera_touch.gd"
-script/source = "extends Control
-
-signal look(delta: Vector2)
-
-var finger := -1
-
-func _gui_input(event):
-
-	if event is InputEventScreenTouch:
-		print(\"TOUCH\")
-
-		if event.pressed:
-			finger = event.index
-		elif event.index == finger:
-			finger = -1
-
-
-	elif event is InputEventScreenDrag:
-		print(\"DRAG\")
-
-		if event.index == finger:
-			emit_signal(\"look\", event.relative)
-"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wsa1w"]
 atlas = ExtResource("6_2ieo8")
 region = Rect2(0, 0, 29, 13)
@@ -1516,9 +1491,34 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="player" type="CharacterBody3D" unique_id=1918745686 node_paths=PackedStringArray("cameras")]
+[sub_resource type="GDScript" id="GDScript_en3rn"]
+resource_name = "camera_touch.gd"
+script/source = "extends Control
+
+signal look(delta: Vector2)
+
+var finger := -1
+
+func _gui_input(event):
+
+	if event is InputEventScreenTouch:
+		print(\"TOUCH\")
+
+		if event.pressed:
+			finger = event.index
+		elif event.index == finger:
+			finger = -1
+
+
+	elif event is InputEventScreenDrag:
+		print(\"DRAG\")
+
+		if event.index == finger:
+			emit_signal(\"look\", event.relative)
+"
+
+[node name="player" type="CharacterBody3D" unique_id=1918745686]
 script = ExtResource("1_rkbax")
-cameras = [NodePath("Camera_1"), NodePath("Camera_2")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1031255661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041612208, 0.35777256, 0.10987145)
@@ -1526,6 +1526,7 @@ shape = SubResource("CapsuleShape3D_1bvp3")
 
 [node name="sprite" type="AnimatedSprite3D" parent="." unique_id=1724733164]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049696267, 1.169616, 0.008592606)
+visible = false
 pixel_size = 0.1
 billboard = 2
 alpha_cut = 1
@@ -1534,23 +1535,49 @@ texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_fnwfd")
 animation = &"dash_front"
 
-[node name="Camera_1" type="Camera3D" parent="." unique_id=1897763365]
+[node name="head" type="Node3D" parent="." unique_id=950779068 node_paths=PackedStringArray("camera_markers")]
+script = ExtResource("6_ebec5")
+camera_markers = [NodePath("CameraPivot/p1"), NodePath("CameraPivot/p3")]
+
+[node name="CameraPivot" type="Node3D" parent="head" unique_id=301655623]
+
+[node name="Camera3D" type="Camera3D" parent="head/CameraPivot" unique_id=1897763365]
 transform = Transform3D(1, 0, 0, 0, 0.9878198, 0.15560281, 0, -0.15560281, 0.9878198, -0.008446157, 1.7734199, 0.0037837029)
 fov = 50.0
 
-[node name="Camera_2" type="Camera3D" parent="." unique_id=699698483]
-transform = Transform3D(1, 0, 0, 0, 0.9390011, 0.34391415, 0, -0.34391415, 0.9390011, -0.0042230785, 2.3311815, 2.9820614)
-fov = 56.7
+[node name="p1" type="Marker3D" parent="head/CameraPivot" unique_id=1757312391]
+transform = Transform3D(1, 0, 0, 0, 0.9998766, 0.015707318, 0, -0.015707318, 0.9998766, -0.008, 1.773, 0.004)
+
+[node name="p3" type="Marker3D" parent="head/CameraPivot" unique_id=30425490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5988145, 3.4597259)
+
+[node name="hold" type="Node3D" parent="head/CameraPivot" unique_id=1696423184]
+transform = Transform3D(0.99999994, 2.3283064e-10, 3.7252903e-09, -4.656613e-10, 1, 0, 0, 0, 0.99999994, -1.8626451e-09, -1.1920929e-07, -2.9802322e-08)
+
+[node name="gun" type="AnimatedSprite3D" parent="head/CameraPivot/hold" unique_id=680243396]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, -1.1099237)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_t2gii")
+autoplay = "default"
+frame_progress = 0.011306516
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=386540651]
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer" unique_id=407869022]
 modulate = Color(1, 1, 1, 0.40784314)
-position = Vector2(913, 58)
-scale = Vector2(0.47480097, 0.4418606)
+position = Vector2(972.00006, 130)
+scale = Vector2(0.31551918, 0.29362932)
 texture_normal = ExtResource("9_hg6s5")
 passby_press = true
 action = "space"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer" unique_id=1294897183]
+modulate = Color(1, 1, 1, 0.40784314)
+position = Vector2(974.00006, 275)
+scale = Vector2(0.3107882, 0.26916084)
+texture_normal = ExtResource("9_hg6s5")
+passby_press = true
+action = "c"
 
 [node name="Virtual_joystick" type="Control" parent="CanvasLayer" unique_id=1272601918]
 layout_mode = 3
@@ -1622,13 +1649,3 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0.27058825)
-
-[node name="hold" type="Node3D" parent="." unique_id=1696423184]
-transform = Transform3D(0.99999994, 2.3283064e-10, 3.7252903e-09, -4.656613e-10, 1, 0, 0, 0, 0.99999994, -1.8626451e-09, -1.1920929e-07, -2.9802322e-08)
-
-[node name="gun" type="AnimatedSprite3D" parent="hold" unique_id=680243396]
-transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, -1.1099237)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_t2gii")
-autoplay = "default"
-frame_progress = 0.011306516
