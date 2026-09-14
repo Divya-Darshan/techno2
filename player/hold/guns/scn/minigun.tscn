@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://d1wmu2xja1yd7"]
+
+[ext_resource type="Texture2D" uid="uid://medbbcl3b0kb" path="res://player/hold/guns/minigun.png" id="1_kqt4c"]
+[ext_resource type="Script" uid="uid://b68h83s01jjrf" path="res://player/hold/guns/scn/minigun.gd" id="2_ll6ly"]
+[ext_resource type="Texture2D" uid="uid://h13a3myp5afj" path="res://player/hold/guns/shot.png" id="3_wpmgq"]
+[ext_resource type="Texture2D" uid="uid://m06pj5v46ld2" path="res://img/proto.png" id="4_wpmgq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsa1w"]
+atlas = ExtResource("1_kqt4c")
+region = Rect2(0, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s0vo"]
+atlas = ExtResource("1_kqt4c")
+region = Rect2(29, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3gkr"]
+atlas = ExtResource("1_kqt4c")
+region = Rect2(58, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoe0r"]
+atlas = ExtResource("1_kqt4c")
+region = Rect2(87, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml76h"]
+atlas = ExtResource("1_kqt4c")
+region = Rect2(116, 0, 29, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kadx"]
+atlas = ExtResource("1_kqt4c")
+region = Rect2(145, 0, 29, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t2gii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsa1w")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsa1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s0vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3gkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoe0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml76h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kadx")
+}],
+"loop": 1,
+"name": &"shoot",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll6ly"]
+atlas = ExtResource("3_wpmgq")
+region = Rect2(0, 0, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpmgq"]
+atlas = ExtResource("3_wpmgq")
+region = Rect2(10, 0, 10, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_las78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll6ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmgq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t2gii"]
+
+[node name="minigun" type="AnimatedSprite3D" unique_id=1434516344]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, -1.1099237)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_t2gii")
+script = ExtResource("2_ll6ly")
+
+[node name="shoot" type="AnimatedSprite3D" parent="." unique_id=1639999076]
+transform = Transform3D(0.86090064, -0.020647157, 5.9761107e-05, 0.020647012, 0.8608992, 0.0016366879, -9.910762e-05, -0.0016347799, 0.8611474, 0.14861342, -0.014182031, -0.0034708977)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_las78")
+autoplay = "default"
+frame = 3
+frame_progress = 0.71794426
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1782696306]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=277251288]
+transform = Transform3D(1.2330575, 7.450581e-09, 2.2351742e-08, -2.2351742e-08, 1.2330576, -9.313226e-10, -3.7252903e-08, 1.3969839e-09, 1.2330576, 0, 0, 0)
+shape = SubResource("SphereShape3D_t2gii")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1253208390]
+
+[node name="Virtual_touchbtn" type="Control" parent="CanvasLayer" unique_id=789126802]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pick" type="TouchScreenButton" parent="CanvasLayer/Virtual_touchbtn" unique_id=50057498]
+modulate = Color(1, 1, 1, 0.40784314)
+position = Vector2(737, 145)
+scale = Vector2(0.285811, 0.28553227)
+texture_normal = ExtResource("4_wpmgq")
+action = "pick"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

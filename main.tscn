@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqb2ar0b57ycr"]
 
 [ext_resource type="Texture2D" uid="uid://df61vjltr8pra" path="res://img/test/check.png" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d1wmu2xja1yd7" path="res://player/hold/guns/scn/minigun.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://cae2facd1m5xd" path="res://foliage/PNG/Shaded/sprite_0052.png" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bqyj4duv3rrlm" path="res://player/player.tscn" id="27_xuqvo"]
 
@@ -27,3 +28,41 @@ pixel_size = 0.001
 billboard = 2
 texture_filter = 0
 texture = ExtResource("4_lquwl")
+
+[node name="minigun" parent="." unique_id=106775043 instance=ExtResource("4_1bvp3")]
+
+[node name="minigun2" parent="." unique_id=2114567439 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun3" parent="." unique_id=1971548687 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun4" parent="." unique_id=854196478 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun5" parent="." unique_id=649948774 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun6" parent="." unique_id=1733220161 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun7" parent="." unique_id=1772500104 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun8" parent="." unique_id=128872237 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun9" parent="." unique_id=704227122 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun10" parent="." unique_id=1764424547 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun11" parent="." unique_id=457786002 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun12" parent="." unique_id=1715441137 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, 0.5522084, 1.4669102, 1.0396944)
+
+[node name="minigun13" parent="." unique_id=1434516344 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.22381228, 0.010855625, 2.8250625, 0.14763565, 2.8300874, 0.0008213149, -2.8212247, 0.14723817, -0.2240738, -18.13964, 1.4669102, 23.39668)
