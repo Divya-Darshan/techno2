@@ -138,3 +138,5 @@ I'm wanna make what's in my mind to reality but I don't know how 😂🥲.
 [ 1/3/26 ] - Yes I have figured out finally It took me two months Art style and restore 10 months is solid for developing Dad stars coming up really great and I learned how to make 16 bit Coloured Texture
 
 [ 4/3/26 ] - Im in my college computer were looking for the game overall art texture and I like one form sketch fabe which is https://skfb.ly/ovEQx it has the retro and pixal art from PS1 but it not a free to download, So..... 😁👍
+
+[14/9/28] -  add a gun Polish the camera and now I can shoot it I can pick up multiple guns even if its not them and its pretty good even if I have 20 guns on the same scene my fps barely drops its actually going higher sometimes its good 
