@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
 		velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 2.0)
 
-	# Update animation
+	# Update animation based on camera angle relative to body forward direction
 	update_sprite(input_dir)
 	
 	# Debug node
@@ -63,86 +63,69 @@ func _physics_process(delta: float) -> void:
 	head.update_headbob(delta, velocity.length(), is_on_floor())
 
 
-func update_sprite(input_dir: Vector2):
+func update_sprite(input_dir: Vector2) -> void:
+	# Calculate which 8-way sprite angle to show based on camera view position
+	var active_camera: Camera3D = head.camera
+	if active_camera:
+		# 1. Body forward vector on XZ plane
+		var body_forward := -global_transform.basis.z
+		body_forward.y = 0.0
+		body_forward = body_forward.normalized()
 
-	# Remember the last direction
-	if input_dir.length() > 0:
+		# 2. Vector pointing from Player toward Camera on XZ plane
+		var dir_to_camera := active_camera.global_position - global_position
+		dir_to_camera.y = 0.0
+		dir_to_camera = dir_to_camera.normalized()
 
-		if input_dir.y > 0:
-			if input_dir.x < 0:
-				last_direction = "back_left"
-			elif input_dir.x > 0:
-				last_direction = "back_right"
-			else:
-				last_direction = "back"
+		# 3. Angle between body facing direction and camera view (-180 to 180 deg)
+		var angle_deg := rad_to_deg(body_forward.signed_angle_to(dir_to_camera, Vector3.UP))
 
-		elif input_dir.y < 0:
-			if input_dir.x < 0:
-				last_direction = "front_left"
-			elif input_dir.x > 0:
-				last_direction = "front_right"
-			else:
-				last_direction = "front"
-
-		elif input_dir.x < 0:
-			last_direction = "front_left"
-
-		elif input_dir.x > 0:
+		# 4. Determine 8-way suffix matching your sprite animation naming conventions
+		if angle_deg >= -22.5 and angle_deg < 22.5:
+			last_direction = "back"
+		elif angle_deg >= 22.5 and angle_deg < 67.5:
+			last_direction = "back_right"
+		elif angle_deg >= 67.5 and angle_deg < 112.5:
+			last_direction = "front_right" # Viewed from right side
+		elif angle_deg >= 112.5 and angle_deg < 157.5:
 			last_direction = "front_right"
+		elif angle_deg >= 157.5 or angle_deg < -157.5:
+			last_direction = "front"
+		elif angle_deg >= -157.5 and angle_deg < -112.5:
+			last_direction = "front_left"
+		elif angle_deg >= -112.5 and angle_deg < -67.5:
+			last_direction = "front_left" # Viewed from left side
+		elif angle_deg >= -67.5 and angle_deg < -22.5:
+			last_direction = "back_left"
 
+	# --- State and Animation Playback ---
 
-	# dash
+	# Dash state
 	if Input.is_action_pressed("dash"):
-
 		jump_played = false
-
-		var anim = "dash_" + last_direction
-
-		if sprite.animation != anim:
-			sprite.play(anim)
-
+		var dash_anim = "dash_" + last_direction
+		if sprite.animation != dash_anim and sprite.sprite_frames.has_animation(dash_anim):
+			sprite.play(dash_anim)
 		return
 
+	# Airborne / Jump state
 	if not is_on_floor():
-
-		if !jump_played:
-
+		if not jump_played:
 			jump_played = true
-
-			var anim = "jump_" + last_direction
-
-			if sprite.animation != anim:
-				sprite.play(anim)
-
-		# Jump animation finished?
-		elif !sprite.is_playing():
-
-			if input_dir.length() > 0:
-
-				var anim = "walk_" + last_direction
-
-				if sprite.animation != anim:
-					sprite.play(anim)
-
-			else:
-
-				var anim = "idle_" + last_direction
-
-				if sprite.animation != anim:
-					sprite.play(anim)
-
+			var jump_anim = "jump_" + last_direction
+			if sprite.animation != jump_anim and sprite.sprite_frames.has_animation(jump_anim):
+				sprite.play(jump_anim)
+		elif not sprite.is_playing():
+			var airborne_state = "walk" if input_dir.length() > 0 else "idle"
+			var air_anim = airborne_state + "_" + last_direction
+			if sprite.animation != air_anim and sprite.sprite_frames.has_animation(air_anim):
+				sprite.play(air_anim)
 		return
 
-
-	# Reset when landing
+	# Grounded landing / Walk / Idle states
 	jump_played = false
-
-	if input_dir.length() > 0:
-		current_state = "walk"
-	else:
-		current_state = "idle"
+	current_state = "walk" if input_dir.length() > 0 else "idle"
 
 	var anim = current_state + "_" + last_direction
-
-	if sprite.animation != anim:
+	if sprite.animation != anim and sprite.sprite_frames.has_animation(anim):
 		sprite.play(anim)
