@@ -1477,6 +1477,7 @@ shape = SubResource("CapsuleShape3D_1bvp3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0690673, 1.2120965, 0.009202957)
 visible = false
 pixel_size = 0.1
+billboard = 2
 alpha_cut = 1
 alpha_scissor_threshold = 0.3
 texture_filter = 2
