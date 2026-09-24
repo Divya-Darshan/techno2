@@ -64,46 +64,70 @@ func _physics_process(delta: float) -> void:
 
 
 func update_sprite(input_dir: Vector2) -> void:
-	# Calculate which 8-way sprite angle to show based on camera view position
-	var active_camera: Camera3D = head.camera
-	if active_camera:
-		# 1. Body forward vector on XZ plane
-		var body_forward := -global_transform.basis.z
-		body_forward.y = 0.0
-		body_forward = body_forward.normalized()
+	# Check if the player is actively providing movement inputs
+	var is_moving := input_dir.length() > 0.05
 
-		# 2. Vector pointing from Player toward Camera on XZ plane
-		var dir_to_camera := active_camera.global_position - global_position
-		dir_to_camera.y = 0.0
-		dir_to_camera = dir_to_camera.normalized()
+	if is_moving:
+		# --- MOVING STATE: 8-Way Input Direction Calculation ---
+		# Convert input_dir vector into an angle in degrees (-180 to 180)
+		var move_angle_deg := rad_to_deg(atan2(input_dir.x, input_dir.y))
 
-		# 3. Angle between body facing direction and camera view (-180 to 180 deg)
-		var angle_deg := rad_to_deg(body_forward.signed_angle_to(dir_to_camera, Vector3.UP))
+		# Divide circle into 8 sectors (45 degrees each)
+		if move_angle_deg >= -22.5 and move_angle_deg < 22.5:
+			last_direction = "back"          # Moving S / Down input
+		elif move_angle_deg >= 22.5 and move_angle_deg < 67.5:
+			last_direction = "back_right"    # Moving S+D / Down-Right
+		elif move_angle_deg >= 67.5 and move_angle_deg < 112.5:
+			last_direction = "front_right"   # Moving D / Right input
+		elif move_angle_deg >= 112.5 and move_angle_deg < 157.5:
+			last_direction = "front_right"   # Moving W+D / Up-Right
+		elif move_angle_deg >= 157.5 or move_angle_deg < -157.5:
+			last_direction = "front"         # Moving W / Up input
+		elif move_angle_deg >= -157.5 and move_angle_deg < -112.5:
+			last_direction = "front_left"    # Moving W+A / Up-Left
+		elif move_angle_deg >= -112.5 and move_angle_deg < -67.5:
+			last_direction = "front_left"     # Moving A / Left input
+		elif move_angle_deg >= -67.5 and move_angle_deg < -22.5:
+			last_direction = "back_left"     # Moving S+A / Down-Left
 
-		# 4. Determine 8-way suffix matching your sprite animation naming conventions
-		if angle_deg >= -22.5 and angle_deg < 22.5:
-			last_direction = "back"
-		elif angle_deg >= 22.5 and angle_deg < 67.5:
-			last_direction = "back_right"
-		elif angle_deg >= 67.5 and angle_deg < 112.5:
-			last_direction = "front_right" # Viewed from right side
-		elif angle_deg >= 112.5 and angle_deg < 157.5:
-			last_direction = "front_right"
-		elif angle_deg >= 157.5 or angle_deg < -157.5:
-			last_direction = "front"
-		elif angle_deg >= -157.5 and angle_deg < -112.5:
-			last_direction = "front_left"
-		elif angle_deg >= -112.5 and angle_deg < -67.5:
-			last_direction = "front_left" # Viewed from left side
-		elif angle_deg >= -67.5 and angle_deg < -22.5:
-			last_direction = "back_left"
+	else:
+		# --- STATIONARY STATE: Camera Perspective Calculation ---
+		# Calculate dynamic billboard frame relative to current active camera
+		var active_camera: Camera3D = head.camera
+		if active_camera:
+			var body_forward := -global_transform.basis.z
+			body_forward.y = 0.0
+			body_forward = body_forward.normalized()
 
-	# --- State and Animation Playback ---
+			var dir_to_camera := active_camera.global_position - global_position
+			dir_to_camera.y = 0.0
+			dir_to_camera = dir_to_camera.normalized()
+
+			var cam_angle_deg := rad_to_deg(body_forward.signed_angle_to(dir_to_camera, Vector3.UP))
+
+			if cam_angle_deg >= -22.5 and cam_angle_deg < 22.5:
+				last_direction = "back"
+			elif cam_angle_deg >= 22.5 and cam_angle_deg < 67.5:
+				last_direction = "back_right"
+			elif cam_angle_deg >= 67.5 and cam_angle_deg < 112.5:
+				last_direction = "front_right"
+			elif cam_angle_deg >= 112.5 and cam_angle_deg < 157.5:
+				last_direction = "front_right"
+			elif cam_angle_deg >= 157.5 or cam_angle_deg < -157.5:
+				last_direction = "front"
+			elif cam_angle_deg >= -157.5 and cam_angle_deg < -112.5:
+				last_direction = "front_left"
+			elif cam_angle_deg >= -112.5 and cam_angle_deg < -67.5:
+				last_direction = "front_left"
+			elif cam_angle_deg >= -67.5 and cam_angle_deg < -22.5:
+				last_direction = "back_left"
+
+	# --- Animation Playback ---
 
 	# Dash state
 	if Input.is_action_pressed("dash"):
 		jump_played = false
-		var dash_anim = "dash_" + last_direction
+		var dash_anim := "dash_" + last_direction
 		if sprite.animation != dash_anim and sprite.sprite_frames.has_animation(dash_anim):
 			sprite.play(dash_anim)
 		return
@@ -112,20 +136,20 @@ func update_sprite(input_dir: Vector2) -> void:
 	if not is_on_floor():
 		if not jump_played:
 			jump_played = true
-			var jump_anim = "jump_" + last_direction
+			var jump_anim := "jump_" + last_direction
 			if sprite.animation != jump_anim and sprite.sprite_frames.has_animation(jump_anim):
 				sprite.play(jump_anim)
 		elif not sprite.is_playing():
-			var airborne_state = "walk" if input_dir.length() > 0 else "idle"
-			var air_anim = airborne_state + "_" + last_direction
+			var air_state := "walk" if is_moving else "idle"
+			var air_anim := air_state + "_" + last_direction
 			if sprite.animation != air_anim and sprite.sprite_frames.has_animation(air_anim):
 				sprite.play(air_anim)
 		return
 
-	# Grounded landing / Walk / Idle states
+	# Grounded states
 	jump_played = false
-	current_state = "walk" if input_dir.length() > 0 else "idle"
+	current_state = "walk" if is_moving else "idle"
 
-	var anim = current_state + "_" + last_direction
+	var anim := current_state + "_" + last_direction
 	if sprite.animation != anim and sprite.sprite_frames.has_animation(anim):
 		sprite.play(anim)
