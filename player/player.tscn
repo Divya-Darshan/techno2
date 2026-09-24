@@ -1474,10 +1474,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041612208, 0.35777256, 0.1
 shape = SubResource("CapsuleShape3D_1bvp3")
 
 [node name="sprite" type="AnimatedSprite3D" parent="." unique_id=1724733164]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049696267, 1.169616, 0.008592606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0690673, 1.2120965, 0.009202957)
 visible = false
 pixel_size = 0.1
-billboard = 2
 alpha_cut = 1
 alpha_scissor_threshold = 0.3
 texture_filter = 2
@@ -1491,7 +1490,7 @@ camera_markers = [NodePath("CameraPivot/p1"), NodePath("CameraPivot/p3")]
 [node name="CameraPivot" type="Node3D" parent="head" unique_id=301655623]
 
 [node name="Camera3D" type="Camera3D" parent="head/CameraPivot" unique_id=1897763365]
-transform = Transform3D(1, 0, 0, 0, 0.9878198, 0.15560281, 0, -0.15560281, 0.9878198, -0.008446157, 1.7734199, 0.0037837029)
+transform = Transform3D(1, 0, 0, 0, 0.98781973, 0.1556028, 0, -0.1556028, 0.98781973, -0.008446157, 1.7734199, 0.0037837029)
 fov = 50.0
 
 [node name="p1" type="Marker3D" parent="head/CameraPivot" unique_id=1757312391]
